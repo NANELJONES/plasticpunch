@@ -37,7 +37,9 @@
 }
 
 
-
+*{
+scroll-behavior: smooth;
+}
 
 
 .grid_div{
@@ -221,6 +223,48 @@ gap:  3px;
   background-color: var(--primary_color);
   border-radius: 200px;
 }
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* Creates 4 equal-width columns */
+  grid-template-rows: repeat(2, 1fr);     /* Creates 2 equal-height rows */
+  grid-column-gap: 0px;                   /* No gap between columns */
+  grid-row-gap: 0px;                      /* No gap between rows */
+}
+
+.div1 { 
+  grid-area: 1 / 1 / 3 / 3; /* Spans 2 rows and takes columns 1 to 3 */
+}
+
+.div2 { 
+  grid-area: 1 / 3 / 2 / 4; /* Takes 1 row (first row), and columns 3 to 4 */
+}
+
+.div3 { 
+  grid-area: 1 / 4 / 2 / 5; /* Takes 1 row (first row), and the last column (4th column) */
+}
+
+.div4 { 
+  grid-area: 2 / 3 / 3 / 5; /* Takes the second row and columns 3 to 4 */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @layer base {
   button{ 

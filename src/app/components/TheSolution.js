@@ -40,7 +40,7 @@ const TheSolution = () => {
 
         <div className= "lg:absolute md: border lg:bottom-[2em] lg:right-[2em] md:w-[30em] md:h-[30em] bg-regular_text w-[70vw] h-[70vw] lg:max-w-[400px] lg:max-h-[400px]"> hey</div>
       
-      <p className="lg:absolute text-center lg:text-left  md:lg:bottom-[2em] lg:left-[2em] text-regular_text w-full md:w-1/2  lg:w-[30%]"> We met with the Chief of the Plastic Renewal Energy sources who contributed immensely to our projects who made our vision a reality and made it all work.We met with the Chief of the Plastic Renewal Energy sources who contributed immensely to our projects</p>
+      <h1 className="lg:absolute text-center lg:text-left  md:lg:bottom-[1em] lg:left-[1em] text-regular_text w-full lg:text-[3em] 2xl:text-[5em]"> Less Plastics <br/> Better Lives</h1>
        
       </div>
 

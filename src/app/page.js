@@ -20,12 +20,15 @@ import IntroStats from "./components/IntroStats";
 import ChangeMakers from "./components/ChangeMakers";
 import SiteMap from "./components/SiteMap";
 import DailyContent from "./components/DailyContent";
+import BlogSample from "./components/BlogSample";
+import {SampleEvents3} from "./components/SampleEvents";
 
 export default function Home() {
   return (
     <>
- 
-    {/* <AbstractCube></AbstractCube> */}
+    
+{/*  
+    <AbstractCube></AbstractCube> */}
 
     <Layout1>
     <div className="flex  flex-col lg:flex-row gap-4 relative h-auto bg-black-200 w-full  ">
@@ -50,7 +53,8 @@ export default function Home() {
            
                   <Society></Society>
            <SampleProject/>
-         
+         <BlogSample></BlogSample>
+         <SampleEvents3></SampleEvents3>
            
            <Donate></Donate>
            <DailyContent></DailyContent>

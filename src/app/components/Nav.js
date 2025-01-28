@@ -73,8 +73,8 @@ const Nav = () => {
             </Link>  
 
             {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10 md:absolute  md:shadow-xl md:rounded-sm md:top-[1em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
-              {each_value?.sub_menu.map((each_sublink)=> {
-               return <Link href={each_sublink.sub_link_link}> <p className="text-white md:hover:text-[1.1em] md:hover:font-semibold transition-all duration-500  text-[1.5em] md:text-[0.8em]  cursor-pointer">{each_sublink.sub_link_name} </p> </Link>
+              {each_value?.sub_menu.map((each_sublink, index)=> {
+               return <Link href={each_sublink.sub_link_link} key={index}> <p className="text-white md:hover:text-[1.1em] md:hover:font-semibold transition-all duration-500  text-[1.5em] md:text-[0.8em]  cursor-pointer">{each_sublink.sub_link_name} </p> </Link>
               })}
               
 
