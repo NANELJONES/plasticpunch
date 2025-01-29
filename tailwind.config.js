@@ -11,7 +11,7 @@ module.exports = {
         main_bg: "var(--background)",
         foreground: "var(--foreground)",
         white: "#ffffff",
-        primary_color: "#2339AB",
+        primary_color: "#3726da",
         secondary_color: "#407BFF",
         tertiary_color:"#301E74",
         deep_text_color:"#2339AB",

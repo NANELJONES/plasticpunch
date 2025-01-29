@@ -5,9 +5,9 @@ const ChangeMakers = () => {
   return (
     <div className='w-full normal_div py-[3em]'>
     <div className='flex flex-col gap-8 '>
-      <h1>Join Our <br/> Team of Changemakers!</h1>
+      <h1 className='text-white'>Join Our <br/> Team of Changemakers!</h1>
       <div>
-        <p>
+        <p  className='text-white'>
           Volunteer with us and make a real impact in the fight against plastic pollution.
           <br />
           <br />

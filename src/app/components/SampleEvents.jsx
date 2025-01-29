@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { events } from '../Data/Data'
 import {EventCard,EventCard2} from './Event/EventCard'
-import { Button1 } from './Buttons'
+import { Button1, Button2 } from './Buttons'
 
 const SampleEvents = () => {
 
@@ -89,8 +89,8 @@ const SampleEvents3 = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-[2em] items-center">
-      <h1 className="self-start">Our Latest Events</h1>
+    <div className="flex flex-col gap-[2em] items-center md:mt-[6em] border-t-4 md:py-[6em]">
+      <h1 className="self-start text-white">Our<br/> Latest Events</h1>
 
       <div className="w-full flex flex-wrap gap-1 items-center justify-between">
         {events.data.eventsConnection.edges.map((each_event, index) => {
@@ -99,7 +99,7 @@ const SampleEvents3 = () => {
 
           return (
             <motion.div
-              className="mx-auto event_parent hover:scale-[1.1] transition-all duration-[1000ms] hover:border-b-4 hover:border-b-primary_color"
+              className="mx-auto event_parent hover:scale-[1.1] r transition-all duration-[1000ms] hover:border-b-4 hover:border-b-primary_color"
               key={index}
               // Animate the vertical position based on scrollY
               initial={{ y:scrollY * 0.8, opacity:0 }}
@@ -107,7 +107,7 @@ const SampleEvents3 = () => {
               transition={{ delay: (index / 10) * 0.4 }}
             >
               <div
-                className="max-w-[500px] flex border bg-primary_color relative"
+                className="max-w-[500px] flex shadow-lg  bg-primary_color relative rounded-lg"
                 style={{
                   backgroundImage: `url(${each_event.node.eventCoverImage.url}), linear-gradient(to top, black, transparent)`,
                   backgroundSize: 'cover',
@@ -119,9 +119,9 @@ const SampleEvents3 = () => {
              
               </div>
               <div className="self-end z-[10] p-5">
-                  <h5 className="">{each_event.node.eventName}</h5>
-                  <p className="">{each_event.node.eventLocation}</p>
-                  <p className="font-light ">
+                  <h4 className="text-white">{each_event.node.eventName}</h4>
+                  <p className="text-white">{each_event.node.eventLocation}</p>
+                  <p className="font-light text-white ">
                     <strong></strong> {new Date(each_event?.node?.eventDatesAndTime[0]).toLocaleDateString()}
                     {each_event.node?.eventDatesAndTime?.length > 1 &&
                       ` - ${new Date(each_event.node.eventDatesAndTime[1]).toLocaleDateString()}`}
@@ -132,7 +132,7 @@ const SampleEvents3 = () => {
         })}
       </div>
 
-      <Button1 link_address="/events" title="Load More Events" />
+      <Button2 link_address="/events" title="Load More Events" />
     </div>
   );
 };

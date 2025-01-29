@@ -10,8 +10,8 @@ const HeadersCollection1 = ({heading,  sub_heading,second_heading, source}) => {
                 <p>{sub_heading}</p>
                
         </div>
-      {source ?  <div className='relative w-full h-[50vh] max-h-[600px] ' >
-                     <Image src={source}  fill className='cover' ></Image>
+      {source ?  <div className='relative w-full h-[50vh] max-h-[600px] object-fit ' >
+                     <Image src={source}  fill className='object-fit' ></Image>
         </div> : ""}
 
     </div>

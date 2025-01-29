@@ -25,9 +25,9 @@ const SampleProject = () => {
      }
    };
  
-   useEffect(() => {
-     fetchProjects();
-   }, []);
+  //  useEffect(() => {
+  //    fetchProjects();
+  //  }, []);
   
   
   

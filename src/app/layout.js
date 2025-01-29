@@ -44,7 +44,7 @@ export default function RootLayout({ children }) {
       <StateContext> 
       <NextTopLoader 
       />
-            {/* <Nav/>  */}
+            <Nav/> 
             {children}
             <Footer/>
         </StateContext>

@@ -34,13 +34,13 @@ const Society = () => {
 
   return (
     <div className="relative md:p-8 shadow-md backdrop-blur-md lg:backdrop-none lg:shadow-none lg:bg-none md:bg-none flex flex-col gap-10 p-10">
-      <h1 className=" leading-[1.5em] md:w-[70%]">
-       <p>Our</p> Sustainable Development Goals (CSR)
+      <h1 className=" leading-[1.5em] md:w-[70%] text-white">
+       <p className='text-white'>Our</p> Sustainable Development Goals (CSR)
       </h1>
    
     
 
-      <p className ="md:w-2/3">
+      <p className ="md:w-2/3 text-white">
       We are committed to sustainable practices, focusing on reducing our carbon footprint, promoting recycling, and supporting environmental conservation initiatives.
         <br />
 
@@ -52,7 +52,7 @@ const Society = () => {
           <div key={index} className={`transition-all duration-500  bg-primary_color ${showMore === csr.Csr_Name ? ' w-full  md:w-[70%]  py-[3em] max-w-[500px] ' : 'max-w-[250px]'}`}>
             <AnimateUp> 
               <div 
-                className=" p-4 h-[20em] flex flex-col justify-end relative"
+                className=" p-4 h-[20em] flex shadow-xl flex-col justify-end relative"
               >
                 <img
                   className={`w-[5em]  absolute top-4 right-4 max-w-[40px] ${showMore  === csr.Csr_Name ? 'top-[-20px]' : ''} `}
@@ -81,7 +81,7 @@ const Society = () => {
       </div>
 
    
-      <p className ="border-l-8 border-primary_color px-2 md:w-1/3">
+      <p className =" text-white border-l-8 border-primary_color px-2 md:w-1/3">
       We are committed to sustainable practices, focusing on reducing our carbon footprint, promoting recycling, and supporting environmental conservation initiatives.
     
       

@@ -9,7 +9,7 @@ const Nav = () => {
 
   const nav_options = [
     { nav_name: "Home", nav_icon: "./menu.svg", nav_link: "/" },
-    { nav_name: "Services", nav_icon: "./menu.svg", nav_link: "/services" },
+   
     { nav_name: "Content", nav_icon: "./menu.svg", nav_link: "/", sub_menu:[
       {"sub_link_name":"Tips", "sub_link_link":"/"  },
       {"sub_link_name":"Blog", "sub_link_link":"/blog"  },
@@ -21,7 +21,7 @@ const Nav = () => {
 
     { nav_name: "Projects", nav_icon: "./menu.svg", nav_link: "/projects" },
     { nav_name: "Gallery", nav_icon: "./menu.svg", nav_link: "/gallery" },
-    { nav_name: "About Us", nav_icon: "./menu.svg", nav_link: "/aboutUs" },
+   
     { nav_name: "Community", nav_icon: "./menu.svg", nav_link: "/", sub_menu:[
       {"sub_link_name":"Facebook Community", "sub_link_link":"/"  },
       {"sub_link_name":"Telegram", "sub_link_link":"/"  },
@@ -31,6 +31,10 @@ const Nav = () => {
     ] },
     { nav_name: "Donations", nav_icon: "./menu.svg", nav_link: "/" },
     { nav_name: "Merch", nav_icon: "./menu.svg", nav_link: "/" },
+
+   
+    { nav_name: "About Us", nav_icon: "./menu.svg", nav_link: "/aboutUs" },
+     { nav_name: "Join Us", nav_icon: "./menu.svg", nav_link: "/join_us" },
     { nav_name: "Contact Us", nav_icon: "./menu.svg", nav_link: "/contactUs" },
   ];
 
@@ -72,7 +76,7 @@ const Nav = () => {
               </p>
             </Link>  
 
-            {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10 md:absolute  md:shadow-xl md:rounded-sm md:top-[1em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
+            {each_value?.sub_menu && sub_menu ===  each_value.nav_name  ? <div className="px-10 md:absolute  md:shadow-xl md:rounded-sm md:top-[2em] md:bg-primary_color  md:w-[15em] md:h-[14em] flex flex-col justify-around items-start px-4   " >
               {each_value?.sub_menu.map((each_sublink, index)=> {
                return <Link href={each_sublink.sub_link_link} key={index}> <p className="text-white md:hover:text-[1.1em] md:hover:font-semibold transition-all duration-500  text-[1.5em] md:text-[0.8em]  cursor-pointer">{each_sublink.sub_link_name} </p> </Link>
               })}

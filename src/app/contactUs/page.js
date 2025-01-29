@@ -56,7 +56,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="bg-primary_color min-h-screen">
+    <div className=" min-h-screen">
       {/* Toast Container (only one instance needed) */}
       <ToastContainer />
 

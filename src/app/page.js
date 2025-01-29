@@ -4,7 +4,7 @@ import Image from "next/image";
 import Donate from "./components/Donate";
 import Header from "./components/Header";
 import Intro from "./components/Intro";
-import YoutubeContent from "./components/YoutubeContent";
+
 import Layout1 from "./layout/Layout1";
 import AbstractCube from "./components/3D/AbstractCube";
 import EducationalContent from "./components/EducationalContent";
@@ -22,10 +22,10 @@ import SiteMap from "./components/SiteMap";
 import DailyContent from "./components/DailyContent";
 import BlogSample from "./components/BlogSample";
 import {SampleEvents3} from "./components/SampleEvents";
-
+import HomeContent from "./components/HomeContent";
 export default function Home() {
   return (
-    <>
+    <div className="bg-[#1E2D7D]">
     
 {/*  
     <AbstractCube></AbstractCube> */}
@@ -34,7 +34,7 @@ export default function Home() {
     <div className="flex  flex-col lg:flex-row gap-4 relative h-auto bg-black-200 w-full  ">
     
       <div className="flex flex-col p-2 md:p-8  z-10 gap-10 w-full " >
-      
+      <HomeContent></HomeContent>
       <IntroStats></IntroStats>
       <TheSolution/>
       <Intro></Intro>
@@ -84,7 +84,7 @@ export default function Home() {
  
     <Clients></Clients>
    
-    <Testimonials></Testimonials>
+    {/* <Testimonials></Testimonials> */}
     <SiteMap></SiteMap>
     
 
@@ -96,7 +96,7 @@ export default function Home() {
     
 
     
-    </>
+    </div>
     
   );
 }

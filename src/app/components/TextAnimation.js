@@ -38,7 +38,7 @@ const WordAnimation = (props) => {
     <div className="flex flex-wrap w-full ">
       {textArray.map((item, index) => (
         <motion.h1 // Use <span> to preserve inline layout
-        className="font-normal"
+        className=" text-white font-bold bold"
           key={index}
           initial={{ y: 70, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -61,9 +61,10 @@ const SmallWordAnimation = (props) => {
 
 
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap text-white">
       {textArray.map((item, index) => (
         <motion.h4 // Use <span> to preserve inline layout
+        className="text-white"
           key={index}
           initial={{ y: 70, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
