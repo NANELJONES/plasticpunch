@@ -1,10 +1,24 @@
-import React from 'react'
+"use client"
+import React, { use, useEffect } from 'react'
 import { blog_info } from '../Data/Data'
 import Image from 'next/image'
+import Link from 'next/link'
 import AnimateUp from './AnimateUp'
 import { Button2 } from './Buttons'
+import { useStateContext } from '../Context/StateContext'
+
+
+
+
 const BlogSample = () => {
-    const first_blog_data = blog_info.data.postsConnection.edges[0].node 
+
+
+
+  const {blog} = useStateContext()
+  console.log("this is the blog data from the function called",blog)
+    const first_blog_data = blog.data[0] 
+
+
 
   return (
     <div className=' w-full flex flex-col gap-[2em]'>
@@ -12,10 +26,10 @@ const BlogSample = () => {
         <div className='  flex flex-col gap-[1em] md:flex-row justify-between '>
       
                     <div className='md:w-[45%]    flex flex-col gap-[1em] '>
-                        <img src={first_blog_data.coverImage.url} className='w-full h-full max-h-[400px]'></img>
-                        <h5 className='text-white'>{first_blog_data.title}</h5>
-                        <p  className='text-white'>{first_blog_data.excerpt}</p>
-                        <p className='italic text-white'>by: {first_blog_data.author.name} , {first_blog_data.createdAt} </p>
+                        <img src={first_blog_data?.node?.coverImage?.url} className='w-full h-full max-h-[400px]'></img>
+                        <Link href={`/blog/${first_blog_data?.node?.slug}`}><h5 className='text-white'>{first_blog_data?.node?.title}</h5></Link>
+                        <p  className='text-white'>{first_blog_data?.node?.excerpt}</p>
+                        <p className='italic text-white'>by: {first_blog_data?.node?.author?.name} , {first_blog_data?.createdAt} </p>
 
                     </div>
 
@@ -23,10 +37,10 @@ const BlogSample = () => {
         
                     <div className='md:w-[45%]   flex flex-col items-start gap-4'>
                                 
-                    {blog_info.data.postsConnection.edges.slice(1,4).map((each_blog,index)=>{
-                            return  <AnimateUp><div className='relative px-2 ' key={index}>
-                            <h6 className='text-white'>{each_blog.node.title} </h6> 
-                            <p className='italic text-white'>by:  {each_blog.node.author.name}</p>
+                    {blog.data.slice(1,4).map((each_blog,index)=>{
+                            return  <AnimateUp key={index}><div className='relative px-2 ' >
+                          <Link href={`/blog/${first_blog_data?.node?.slug}`}> <h6 className='text-white'>{each_blog?.node?.title} </h6> </Link> 
+                            <p className='italic text-white'>by:  {each_blog.node?.author?.name}</p>
 
                             <div className='w-[20px] h-[20px] bg-orange-400 top-2 left-[-2em] absolute'></div>
                 

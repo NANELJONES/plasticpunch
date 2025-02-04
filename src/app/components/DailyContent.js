@@ -7,8 +7,10 @@ import Slider from "react-slick";
 import YoutubeContent from "./YoutubeContent";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useStateContext } from "../Context/StateContext";
 
 const DailyContent = () => {
+  const  {tips,awarenessMaterial} =  useStateContext()
   const isImage = (fileName) => {
     return /\.(jpg|jpeg|png|gif|webp|bmp|tiff)$/i.test(fileName);
   };
@@ -23,16 +25,18 @@ const DailyContent = () => {
     variableWidth: true,
   };
 
+
+
   return (
     <div className="bg-primary_color py-[2em] md:py-[4em] m px-[1em] md:px-[3em] ">
       <p className="text-regular_text ml-[3em]">TIPS OF THE DAY</p>
       <br/>
-      <div className=' mx-auto     '>
-       {tip.slice(0,3).map((each_tip, index )=>{
+      <div className=' mx-auto  flex flex-col gap-4   '>
+       {tips?.data.slice(0,3).map((each_tip, index )=>{
             return  <div key={index} className='flex border-b-2 py-4  items-center  gap-6'>  
-              <h5 className='text-regular_text'>{index + 1}</h5> 
-            <h5 className='hidden md:block text-regular_text w-full md:w-2/3'>{each_tip}</h5 >
-            <p className='md:hidden  text-regular_text w-full md:w-2/3'>{each_tip}</p >
+              <h3 className='text-regular_text'>{index + 1}</h3> 
+            <h4 className='hidden md:block text-regular_text w-full md:w-2/3'>{each_tip?.node?.tip}</h4 >
+            <p className='md:hidden  text-regular_text w-full md:w-2/3'>{each_tip?.node?.tip}</p >
       
             
             </div>
@@ -53,7 +57,7 @@ const DailyContent = () => {
       </div>
 
       <Slider {...settings} className="mt-[4em] customDots">
-        {awareness_content.data.awarenessMaterialsConnection.edges.map(
+        {awarenessMaterial.data.slice(0,3).map(
           (item, index) =>
             item.node.awarenessContent.map((content, idx) => (
               <div key={`${index}-${idx}`} className="flex">
@@ -83,6 +87,10 @@ const DailyContent = () => {
             ))
         )}
       </Slider>
+      <br/>
+      <Button2 link_address="/awareness_material" title="Get More Aw" />
+
+        
 
 
 

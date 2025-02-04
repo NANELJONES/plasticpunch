@@ -1,19 +1,25 @@
 "use client";
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/css"; // Import Swiper styles
+import { getClients } from '../api/queries';
+
+
 
 const Clients = () => {
-  const client_logos = [
-    "/clients/uew_064622.jpg",
-    "/clients/gaec_064615.jpg",
-    "/clients/getfund_064617.jpg",
-    "/clients/gnpc1_064620.jpg",
-    "/clients/kcl_064620.jpg",
-    "/clients/moe_064621.jpg",
-    "/clients/upsa.jpg"
-  ];
+const [client_logos, setClientLogos] = useState([]);
+
+  useEffect(() => {
+    getClients().then((clients) => {
+      const logos = clients.map((client) => client.node.partnerLogo.url);
+      setClientLogos(logos);
+    });
+
+    console.log(client_logos);
+
+  }, []);
 
   return (
     <div className="w-full p-[2em] md:p-[5em] bg-primary_color border-secondary_color">
@@ -33,6 +39,7 @@ const Clients = () => {
         spaceBetween={1} // Space between slides
         pagination={{ clickable: true }}
         navigation={true}
+        centeredSlides={true} // Center the slides
         autoplay={{ delay: 1000, disableOnInteraction: false }} // Auto slide with a 1 second delay, continue on interaction
         loop={true} // Infinite loop
         modules={[Pagination, Navigation, Autoplay]}

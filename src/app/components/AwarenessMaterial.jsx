@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import { awareness_content } from "../Data/Data";
 import { Button2 } from "./Buttons";
@@ -10,8 +11,8 @@ const AwarenessMaterial = ({ input_data }) => {
   };
 
   return (
-    <div className="w-full columns-[300px] gap-[20px] ">
-      {input_data.data.awarenessMaterialsConnection.edges.map((edge, index) => (
+    <div className="w-full columns-[300px] xl:columns-3 gap-[20px] ">
+      {input_data.length > 0 ? input_data.map((edge, index) => (
         <div key={index} className="">
           <div className="mt-[20px]">
             {edge.node.awarenessContent.map((content, idx) => (
@@ -39,7 +40,7 @@ const AwarenessMaterial = ({ input_data }) => {
             ))}
           </div>
         </div>
-      ))}
+      )) :<p className="mt-[5em] mx-auto">Content Data Not Uploaded Yet. Would  Be Uploaded Soon</p>}
     </div>
   );
 };

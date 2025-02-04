@@ -1,7 +1,7 @@
 import { graphql } from "graphql"
 import {request, gql } from  "graphql-request"
 
-const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT
+const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT_CMS
 
 // getProjects
 export const getProjects = async ()=>{
@@ -88,12 +88,14 @@ export const getSingleProject = async (slug) => {
 
 
 // getGallery
+// getGallery
 export const getGallery = async (first = 10, after = null) => {
   const query = gql`
     query MyQuery($first: Int, $after: String) {
       galleriesConnection(first: $first, after: $after) {
         edges {
           node {
+            title
             imageContent {
               url
             }
@@ -109,7 +111,7 @@ export const getGallery = async (first = 10, after = null) => {
 
   try {
     const response = await request(graphqlAPI, query, { first, after });
-    // console.log("Fetched images:", response);
+    console.log("Fetched images:", response);
     return response.galleriesConnection;
   } catch (error) {
     console.error("Error fetching gallery images:", error);
@@ -117,46 +119,52 @@ export const getGallery = async (first = 10, after = null) => {
   }
 };
 
-
-
-// getServices
-export const getServices = async ()=>{
-    
-  const query =  gql `
-
-query MyQuery {
-  servicesConnection {
-    edges {
-      node {
-        serviceDetail
-        serviceIcon {
-          url
+export const getTips = async (first = 10, after = null) => {
+  const query = gql`
+    query MyQuery($first: Int, $after: String) {
+      tipsConnection(first: $first, after: $after) {
+        edges {
+          node {
+            tip
+          }
+          cursor
         }
-        serviceName
-        serviceImage {
-          url
+        pageInfo {
+          hasNextPage
+          endCursor
         }
       }
     }
+  `;
+
+  try {
+    const response = await request(graphqlAPI, query, { first, after });
+    
+    return {
+      data: response.tipsConnection.edges,
+      pageInfo: response.tipsConnection.pageInfo,
+    };
+  } catch (error) {
+    console.error("There was an error fetching tips:", error);
+    return { edges: [], pageInfo: { hasNextPage: false, endCursor: null } };
   }
-}   
+};
+
+
+
+
+export const getEvents = async ()=>{
+  const query = gql`
+  
+  
+  
+  
+  
   `
-
-try{
-  const response = await request(graphqlAPI, query)
-
-  
-  return   response?.servicesConnection ?.edges
- 
-  
-}catch (error){
-  console.log("There was an error", error)
-  return ["null"]
 }
 
 
 
-}
 
 
 
@@ -238,37 +246,214 @@ try{
 
 
 // get AwarenessMaterials
-export const getAwarenessMaterial  = async ()=>{
-    
-  const query =  gql `
+export const getAwarenessMaterials = async (first = 10, after = null) => {
+  const query = gql`
+    query MyQuery($first: Int, $after: String) {
+      awarenessMaterialsConnection(first: $first, after: $after) {
+        edges {
+          node {
+            title
+            awarenessContent {
+              url
+              fileName
+            }
+          }
+        }
+        pageInfo {
+          hasNextPage
+          endCursor
+        }
+      }
+    }
+  `;
 
-query MyQuery {
-  awarenessMaterialsConnection {
+  try {
+    const response = await request(graphqlAPI, query, { first, after });
+    console.log("This is the data fetched for awareness materials:", response);
+
+    return {
+      data: response.awarenessMaterialsConnection.edges,
+      pageInfo: response.awarenessMaterialsConnection.pageInfo,
+    };
+  } catch (error) {
+    console.error("Error fetching awareness materials:", error);
+    return { edges: [], pageInfo: { hasNextPage: false, endCursor: null } };
+  }
+};
+
+
+
+
+
+export const getClients = async ()=>{
+  const query = gql `
+ query MyQuery {
+  clientsConnection {
     edges {
       node {
-        title
-        awarenessContent {
+        partnerLogo {
           url
-          fileName
         }
       }
     }
   }
 }
   `
+  try{
+    const response = await request(graphqlAPI, query)
+  
+    console.log( "these are the clients", response?.clientsConnection?.edges)
+    return   response?.clientsConnection?.edges
+   
+    
+  }catch (error){
+    console.log("There was an error, WE NOR SEE TOP", error)
+    return ["null"]
+  }
+  
+
+}
+
+
+
+// get volunteer option
+export const getVolunteeringOptions = async () => {
+
+  const query = gql`
+query GetEnumValues {
+  __type(name: "VolunteeringOptions") {
+    enumValues {
+      name
+    }
+  }
+}
+  
+  `
+
+
+  try {
+    const response = await request(graphqlAPI, query);
+
+  
+     return response?.__type.enumValues
+  } catch (error) { 
+    console.error("There was an error fetching the volunteer options:", error);
+    return [];
+  }
+
+}
+
+
+export const submitVolunteerApplication = async (volunteer_Info) => {
+  const response = await fetch("/api/queries/volunteers", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(volunteer_Info),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to submit Volunteer Position");
+  }
+
+  return response.json();
+
+
+}
+
+
+export const getAvailablePositions = async()=>{
+
+const query = gql`
+query MyQuery {
+  jobPostsConnection {
+    edges {
+      node {
+        slug
+        jobDetails
+        jobExcerpt
+        jobName
+        id
+        jobStatus
+      }
+    }
+  }
+}
+
+
+`
+
 
 try{
-  const response = await request(graphqlAPI, query)
 
-  
-  return   response?.awarenessMaterialsConnection?.edges
- 
-  
-}catch (error){
+const response = await request(graphqlAPI, query)
+console.log("these are the postions available" , response)
+return response.jobPostsConnection.edges
+
+}catch(error){
   console.log("There was an error", error)
-  return ["null"]
+  return [null]
+
+}
+
+
+}
+
+
+export const getSingleJobPost = async(slug)=>{
+  const query = gql`
+query MyQuery ($slug: String!){
+  jobPostsConnection(where:{slug:$slug}) {
+    edges {
+      node {
+        slug
+        jobDetails
+        jobExcerpt
+        jobName
+        id
+        jobStatus
+      }
+    }
+  }
+}
+
+
+`
+
+
+try{
+
+const response = await request(graphqlAPI, query, {slug})
+console.log("this is the single job position" , response)
+return response?.jobPostsConnection?.edges[0]?.node
+
+}catch(error){
+  console.log("There was an error", error)
+  return [null]
+
+}
+
+}
+
+export const submitJobApplication =  async (applicant_data)=>{
+
+  const response = await fetch("/api/queries/jobs", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(applicant_data),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to submit Job Application");
+  }
+
+  return response.json();
+
+
 }
 
 
 
-}

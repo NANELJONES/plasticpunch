@@ -1,6 +1,7 @@
 "use client"
 import React from 'react'
 import { Button2 } from '../Buttons';
+import Link from 'next/link';
 
 
 const EventCard = ({ event_data }) => {
@@ -11,15 +12,16 @@ const EventCard = ({ event_data }) => {
     eventIntro,
     eventLocation,
     eventDatesAndTime,
+    externalEventLink
   } = event_data;
 
   return (
-    <div className="border-2 mx-auto w-full    rounded-lg max-w-sm shadow-lg">
+    <div className=" mx-auto w-full   md:scale-[0.9] lg:scale-1  rounded-lg max-w-sm shadow-lg">
       {/* Cover Image */}
       <img
         src={coverImageUrl}
         alt={eventName}
-        className="w-full h-[20em] lg:h-[20em] object-cover rounded-md "
+        className="w-full h-[20em] md:h-[15em] lg:h-[20em] object-cover rounded-t-md "
       />
       
    <div className='bg-primary_color p-6'>
@@ -42,11 +44,12 @@ const EventCard = ({ event_data }) => {
       </p>
 
     </div>
-{/* <br/>
-      <div className='flex items-center justify-between gap-4'  >
-    <button className='w-full md:w-1/2 bg-none text-white bg-primary_color'>Register</button>
-    <button className=' w-full md:w-1/2 bg-none   border-primary_color'>Learn More</button>
-   </div> */}
+
+      <div className='flex items-center justify-between gap-4  mt-2 '  >
+   <Link href={externalEventLink === null  ? `/events/${eventName}` : externalEventLink} className='w-full'> <button className='w-full bg-none bg-secondary_color text-white bg-primary_color'>Register</button></Link>
+    <Link href={`/events/${eventName}`} className='w-full'>  <button className=' w-full  bg-none text-white   border-white'>Learn More</button></Link>
+   
+   </div>
    </div> 
 
 

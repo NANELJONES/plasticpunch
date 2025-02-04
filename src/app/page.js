@@ -27,8 +27,8 @@ export default function Home() {
   return (
     <div className="bg-[#1E2D7D]">
     
-{/*  
-    <AbstractCube></AbstractCube> */}
+ 
+    <AbstractCube></AbstractCube> 
 
     <Layout1>
     <div className="flex  flex-col lg:flex-row gap-4 relative h-auto bg-black-200 w-full  ">
@@ -41,15 +41,7 @@ export default function Home() {
 
     
        
-        {/* <div className=" p-8 bg-[rgba(256,256,256,0.6)] shadow-md md:backdrop-blur-md md::backdrop-none md:shadow-none md::bg-none">
-       
-        <TextAnimation text="Intergrity"></TextAnimation>
-        <TextAnimation text="Innovation"></TextAnimation>
-        <TextAnimation text="Sustainabliity"></TextAnimation>
-        <SingleLine delay_time="1"/>
-   
-        </div> */}
-                  
+      
            
                   <Society></Society>
            <SampleProject/>

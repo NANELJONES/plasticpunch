@@ -181,9 +181,6 @@ export const events= {
       "edges": [
         {
           "node": {
-            "eventCoverImage": {
-              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
-            },
             "eventDatesAndTime": [
               "2025-01-15T03:15:00+00:00",
               "2025-01-20T03:25:00+00:00"
@@ -191,15 +188,6 @@ export const events= {
             "eventDetails": {
               "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
             },
-            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
-            "eventLocation": "East Legon Hills",
-            "eventName": "Erudite Beach Cleanup",
-            "eventType": "beachEvent",
-            "ticketPrice": [
-              "Singles - Gh 20.00",
-              "Free "
-            ],
-            "slug": null,
             "eventGallery": [
               {
                 "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
@@ -210,28 +198,31 @@ export const events= {
               {
                 "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
               }
-            ]
+            ],
+            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
+            "eventLocation": ["East Legon"],
+            "eventName": "Erudite Beach Cleanup",
+            "eventType": "beachEvent",
+            "externalEventLink": "https://www.youtube.com/watch?v=HYv55DhgTuA&t=61s",
+            "slug": null,
+            "ticketPrice": [
+              "Singles - Gh 20.00",
+              "Free "
+            ],
+            "eventCoverImage": {
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+            }
           }
         },
         {
           "node": {
-            "eventCoverImage": {
-              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9sy666h07mml4yyxst1"
-            },
             "eventDatesAndTime": [
-              "2025-01-24T03:20:00+00:00"
+              "2025-01-24T03:20:00+00:00",
+              "2025-02-19T18:30:00+00:00"
             ],
             "eventDetails": {
               "html": "<p><em>Lorem ipsum</em> (<a title=\"Help:IPA/English\" href=\"https://en.wikipedia.org/wiki/Help:IPA/English\">/ˌlɔː.rəm ˈɪp.səm/</a> <a title=\"Help:Pronunciation respelling key\" href=\"https://en.wikipedia.org/wiki/Help:Pronunciation_respelling_key\"><em>LOR-əm IP-səm</em></a>) is a dummy or placeholder text commonly used in graphic design, publishing, and web development to fill empty spaces in a layout that does not yet have content.</p><p><em>Lorem ipsum</em> is typically a corrupted version of <a title=\"De finibus bonorum et malorum\" href=\"https://en.wikipedia.org/wiki/De_finibus_bonorum_et_malorum\"><em>De finibus bonorum et malorum</em></a>, a 1st-century BC text by the <a title=\"Roman Republic\" href=\"https://en.wikipedia.org/wiki/Roman_Republic\">Roman</a> statesman and philosopher <a title=\"Cicero\" href=\"https://en.wikipedia.org/wiki/Cicero\">Cicero</a>, with words altered, added, and removed to make it nonsensical and improper <a title=\"Latin\" href=\"https://en.wikipedia.org/wiki/Latin\">Latin</a>. The first two words themselves are a <a title=\"Clipping (morphology)\" href=\"https://en.wikipedia.org/wiki/Clipping_(morphology)\">truncation</a> of <em>dolorem ipsum</em> (&quot;pain itself&quot;).</p><p>Versions of the <em>Lorem ipsum</em> text have been used in <a title=\"Typesetting\" href=\"https://en.wikipedia.org/wiki/Typesetting\">typesetting</a> at least since the 1960s, when it was popularized by advertisements for <a title=\"Letraset\" href=\"https://en.wikipedia.org/wiki/Letraset\">Letraset</a> transfer sheets.<a title=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-Cibois-1\" href=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-Cibois-1\">[1]</a> <em>Lorem ipsum</em> was introduced to the digital world in the mid-1980s, when <a title=\"Aldus Corporation\" href=\"https://en.wikipedia.org/wiki/Aldus_Corporation\">Aldus</a> employed it in graphic and word-processing templates for its desktop publishing program <a title=\"Adobe PageMaker\" href=\"https://en.wikipedia.org/wiki/Adobe_PageMaker\">PageMaker</a>. Other popular <a title=\"Word processor (electronic device)\" href=\"https://en.wikipedia.org/wiki/Word_processor_(electronic_device)\">word processors</a>, including <a title=\"Pages (word processor)\" href=\"https://en.wikipedia.org/wiki/Pages_(word_processor)\">Pages</a> and <a title=\"https://en.wikipedia.org/wiki/Microsoft_Word\" href=\"https://en.wikipedia.org/wiki/Microsoft_Word\">Microsoft Word</a>, have since adopted <em>Lorem ipsum</em>,<a title=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-SDop-2\" href=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-SDop-2\">[2]</a> as have many <a title=\"LaTeX\" href=\"https://en.wikipedia.org/wiki/LaTeX\">LaTeX</a> packages,<a title=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-3\" href=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-3\">[3]</a><a title=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-4\" href=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-4\">[4]</a><a title=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-ms-212251-5\" href=\"https://en.wikipedia.org/wiki/Lorem_ipsum#cite_note-ms-212251-5\">[5]</a> web content managers such as <a class=\"mw-redirect\" title=\"Joomla!\" href=\"https://en.wikipedia.org/wiki/Joomla!\">Joomla!</a> and <a title=\"WordPress\" href=\"https://en.wikipedia.org/wiki/WordPress\">WordPress</a>, and <a title=\"CSS\" href=\"https://en.wikipedia.org/wiki/CSS\">CSS</a> libraries such as</p>"
             },
-            "eventIntro": "come and celebrate the basic informtion about a very nice beach vibe",
-            "eventLocation": "North East California ",
-            "eventName": "Erudite Beach Housing Event",
-            "eventType": "beachChilling",
-            "ticketPrice": [
-              "Free"
-            ],
-            "slug": "erudite-beach-housing-event",
             "eventGallery": [
               {
                 "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2oacgac7pkk07mlygiykdq7"
@@ -239,82 +230,53 @@ export const events= {
               {
                 "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
               }
-            ]
+            ],
+            "eventIntro": "come and celebrate the basic informtion about a very nice beach vibe",
+            "eventLocation": [
+              ""
+            ],
+            "eventName": "Erudite Beach Housing Event",
+            "eventType": "conferences",
+            "externalEventLink": "https://www.eventbrite.com/e/ghana-rooted-hair-fashion-show-tickets-1116954754739?aff=ehometext",
+            "slug": "erudite-beach-housing-event",
+            "ticketPrice": [
+              "Free"
+            ],
+            "eventCoverImage": {
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9sy666h07mml4yyxst1"
+            }
           }
         },
         {
           "node": {
-            "eventCoverImage": {
-              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
-            },
             "eventDatesAndTime": [
-              "2025-01-15T03:15:00+00:00",
-              "2025-01-20T03:25:00+00:00"
+              "2025-01-15T22:30:00+00:00",
+              "2025-01-23T23:03:00+00:00"
             ],
-            "eventDetails": {
-              "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
-            },
-            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
-            "eventLocation": "East Legon Hills",
-            "eventName": "Erudite Beach Cleanup",
-            "eventType": "beachEvent",
+            "eventDetails": null,
+            "eventGallery": [],
+            "eventIntro": "This is for chilling and dacning of tsatsu",
+            "eventLocation": [
+              "East Legon",
+              "Kaneshie"
+            ],
+            "eventName": "Tsatsu Dances",
+            "eventType": "conferences",
+            "externalEventLink": null,
+            "slug": "tsatsu-dances",
             "ticketPrice": [
-              "Singles - Gh 20.00",
-              "Free "
+              "Free",
+              "200"
             ],
-            "slug": null,
-            "eventGallery": [
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
-              },
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
-              },
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
-              }
-            ]
-          }
-        },
-        {
-          "node": {
             "eventCoverImage": {
-              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
-            },
-            "eventDatesAndTime": [
-              "2025-01-15T03:15:00+00:00",
-              "2025-01-20T03:25:00+00:00"
-            ],
-            "eventDetails": {
-              "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
-            },
-            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
-            "eventLocation": "East Legon Hills",
-            "eventName": "Erudite Beach Cleanup",
-            "eventType": "beachEvent",
-            "ticketPrice": [
-              "Singles - Gh 20.00",
-              "Free "
-            ],
-            "slug": null,
-            "eventGallery": [
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
-              },
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
-              },
-              {
-                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
-              }
-            ]
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9sj60qf07me00fbn0rl"
+            }
           }
-        },
+        }
       ]
     }
   }
 }
-
 
 
 
@@ -594,3 +556,5 @@ export const categories ={
     }
   }
 }
+
+

@@ -31,14 +31,17 @@ const TheSolution = () => {
         >
           {solutions.map((one_sol, index) => (
             <SwiperSlide key={index}>
-              <h1 className="text-regular_text text-[4em] text-center  lg:text-left  md:text-[4.5em] leading-[1em] lg:text-[150px]">
+              <h1 className="text-regular_text font-bold text-[4em] text-center  lg:text-left  md:text-[4.5em] leading-[1em] lg:text-[150px]">
                 {one_sol}
               </h1>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className= "lg:absolute md: border lg:bottom-[2em] lg:right-[2em] md:w-[30em] md:h-[30em] bg-regular_text w-[70vw] h-[70vw] lg:max-w-[400px] lg:max-h-[400px]"> hey</div>
+        <div className= "lg:absolute md:  lg:bottom-[2em] lg:right-[2em] md:w-[30em] md:h-[30em]  w-[70vw] h-[70vw] lg:max-w-[500px] lg:max-h-[400px]"> 
+          <img src="/ImageFist.svg" alt="earth" className="w-full h-full object-cover"/>
+
+        </div>
       
       <h1 className="lg:absolute text-center lg:text-left  md:lg:bottom-[1em] lg:left-[1em] text-regular_text w-full lg:text-[3em] 2xl:text-[5em]"> Less Plastics <br/> Better Lives</h1>
        

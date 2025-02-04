@@ -10,7 +10,8 @@ import { useStateContext } from "@/app/Context/StateContext";
 import Modal from "@/app/components/Modal";
 
 const Page = () => {
-  const { show_modal, set_show_modal, set_url } = useStateContext();
+  const { show_modal, set_show_modal, set_url, dataState } = useStateContext();
+
 
   const pathname = usePathname(); // Get the current path
   const slug = pathname.split("/").pop(); // Extract the last segment of the path (slug)
@@ -19,7 +20,7 @@ const Page = () => {
   const [loading, setLoading] = useState(true); // Handle loading state
 
   useEffect(() => {
-  
+
     const fetchProject = async () => {
       try {
         const fetchedProject = await getSingleProject(slug); // Pass slug dynamically
@@ -46,7 +47,7 @@ const Page = () => {
     {show_modal && <Modal></Modal>}
    
     <div className=' p-10 mx-auto max-w-[1500px] md:py-20 flex flex-col md:flex-row   gap-10 flex items-start    '>
-   
+  
     {project == null ?       <div className="w-full bg-primary_color h-[100dvh]"> Content Loading</div> : ""}
      
       <div className='w-full z-[11]  md:block md:w-[30%] p-10 md:h-[100vh] flex-col items-start bg-primary_color sticky top-0 md:top-[50px]'>

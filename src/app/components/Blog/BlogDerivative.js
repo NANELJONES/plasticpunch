@@ -34,7 +34,7 @@ const BlogDerivative = ({ title, blog_data }) => {
       </div>
 
       {/* Block layout for large screens */}
-      <div className="hidden md:flex flex-wrap gap-4 mt-2 ">
+      <div className="hidden   md:w-[100%] md:flex flex-wrap gap-4 mt-2 ">
         {blog_data.map((each_blog, index) => (
           <SimpleBlogPost key={index} blog_post={each_blog} />
         ))}
@@ -65,7 +65,7 @@ const HorizontalBlogDerivative = ({ title, blog_data }) => {
       <div className="block ">
         <Slider {...sliderSettings}>
           {blog_data.map((each_blog, index) => (
-            <div key={index}>
+            <div key={index} className="ml-4">
               <SimpleBlogPost blog_post={each_blog} />
             </div>
           ))}

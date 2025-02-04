@@ -6,8 +6,9 @@ import { useStateContext } from "../Context/StateContext";
 import Layout1 from "../layout/Layout1";
 import Modal from "../components/Modal";
 import { HeadersCollection1 } from "../components/AllHeaders/HeadersCollection";
-import { getGallery } from "../lib";
+import { getGallery } from "../api/queries";
 
+// import { getGallery } from "../lib";
 const Page = () => {
   const { set_url, set_show_modal, show_modal } = useStateContext();
   const [gallery, setGallery] = useState([]);
@@ -18,6 +19,7 @@ const Page = () => {
   // Fetch gallery data
   const fetchGallery = useCallback(async () => {
     if (isLoading || !hasNextPage) return; // Prevent multiple fetches
+    console.log(gallery)
 
     setIsLoading(true);
     try {
@@ -60,6 +62,7 @@ const Page = () => {
           sub_heading="Get in touch with our latest blogs, from all around the world regarding our various inputs and projects."
           source="/Gallery Media Image.svg"
         />
+        
         <div className="flex p-10 md:p-20 items-center justify-around flex-wrap gap-4">
           {gallery.map((item, index) => (
             <div key={index} className="w-full  ">

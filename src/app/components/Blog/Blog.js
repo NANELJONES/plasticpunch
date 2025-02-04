@@ -1,13 +1,25 @@
 "use client"
-import React from 'react'
+import React, { use } from 'react';
 import { blog_info } from '@/app/Data/Data'
 import Link from 'next/link'
+import { useState } from 'react';
+
 import moment from 'moment'
 import { motion } from 'framer-motion'
 import Categories from './Categories'
+import { useStateContext } from '@/app/Context/StateContext'
 import {BlogDerivative,HorizontalBlogDerivative} from './BlogDerivative'
-
+import { useEffect } from 'react';
+import { getBlogs } from '@/app/api/blog';
+import { GetSimilarPosts, getFeaturedPost} from '@/app/api/blog';
 const Blog = () => {
+
+
+  const {blog,  fetchblog} = useStateContext()
+  const [similarPosts, setSimilarPosts] = useState([])
+  const [featuredPosts, setFeaturedPosts] = useState([])
+
+
 
   const dateReturner =  (timestap)=>{
     const real_date = moment(timestap).format("YYYY-MM-DD");
@@ -15,14 +27,88 @@ const Blog = () => {
   }
 
 
+  useEffect(( ) => {
+
+    if (similarPosts.length > 0) {
+      return
+    }
+
+    if (similarPosts){
+      return
+    }
+    const getSimilarPosts = async () => {
+      try {
+        const response = await GetSimilarPosts(blog.data[0]?.node?.category, blog.data[0]?.node?.slug);
+        console.log("This is the similar posts:", response)
+        setSimilarPosts(response)
+      } catch (error) { 
+        console.error("Error fetching similar posts:", error);
+        return;
+      }
+    }
+
+
+    
+
+
+    if (blog) {
+      // getSimilarPosts()  
+      getFeatured()
+    }else{ return}
+   
+
+  }, 
+
+  [blog])
+
+
+  useEffect(() => {
+
+    if (featuredPosts.length>0)  return
+    const getFeatured = async () => {  
+      try {
+        const response = await getFeaturedPost();
+        console.log("This is the LASSSSSSSSST FEATURE:", response)
+        setFeaturedPosts(response)
+        
+      } catch (error) {
+        console.error("Error fetching featured posts:", error);
+        return;
+      }
+  
+  
+    }
+    
+
+    if (featuredPosts.length > 0) {
+      return
+    }else{
+      getFeatured()
+    }
+
+
+  }, 
+  
+  
+  
+  [blog])
+
+
+
+
+  
+
+
+
+
   return (
     <>
     <h3 className='mt-10'>Our Latest Blogs</h3>
-    <Categories></Categories>
+    {/* <Categories></Categories> */}
   
     <div className='flex flex-col md:flex-row gap-4 xl:gap-[5em] '>
             <div className='md:w-[70%] flex flex-col gap-4 '>
-                {blog_info.data.postsConnection.edges.map((each_blog,index)=>{
+                {blog.data.map((each_blog,index)=>{
                    
                    return  <motion.div
                    initial ={{opacity:0, y:-20}}
@@ -59,13 +145,13 @@ transition={{duration:1}}
             <div className='w-full md:w-[30%]'>
                 
              
-                <BlogDerivative title="Similar Posts" blog_data={blog_info.data.postsConnection.edges}></BlogDerivative>
+                {/* <BlogDerivative title="Popular Posts" blog_data={blog.data.slice(0,3)}></BlogDerivative> */}
 
                 
             </div>
     </div>
     
-    <HorizontalBlogDerivative title="Featured Posts" blog_data={blog_info.data.postsConnection.edges}/>
+    <div className='mt-[8em]'><HorizontalBlogDerivative title="Featured Posts" blog_data={featuredPosts}/></div>
     </>
   )
 }

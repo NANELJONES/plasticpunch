@@ -26,9 +26,8 @@ const Footer = () => {
                 
 
                   {/*Location  */}
-                <span  className='flex flex-col md:flex-row  items-center gap-2 md:gap-5 '>  <img src='/location.svg' className='w-[30px]'></img> <p className='text-white text-center md:text-left'>BAC 52, 3rd Street, Baatsonaa, Tema.</p> </span>
-                <br/>
-                <span  className='flex flex-col md:flex-row  items-center gap-2 md:gap-5 '>  <img src='/location.svg' className='w-[30px]'></img> <p className='text-white text-center md:text-left'>   Plot 86 block E, Daban, Kumasi</p> </span>
+                <span  className='flex flex-col md:flex-row  items-center gap-2 md:gap-5 '>  <img src='/location.svg' className='w-[30px]'></img> <p className='text-white text-center md:text-left'>Tse Addo, Greater Accra - Ghana, West Africa</p> </span>
+
    
                 <br/>
 
@@ -38,9 +37,9 @@ const Footer = () => {
 
                   <span className='flex flex-col  items-center md:items-start'>
 
-                  <p className='text-white '>(233) 20 211 4432</p> 
-                 <p className='text-white'>024 432 8880</p> 
-                 {/* <p className='text-white'>024 858 5116</p>  */}
+                  <p className='text-white '>+233(0)244 988 412</p> 
+                 <p className='text-white'>+233(0)50 722 5676</p> 
+                 <p className='text-white'>0302972403</p> 
 
                   </span>
                 
@@ -49,7 +48,7 @@ const Footer = () => {
                 <br/> 
                 <span  className='flex flex-col md:flex-row  items-center gap-2 md:gap-5'>  <img src='/email.svg' className='w-[30px]'></img> <p className='text-white'>info@plasticpunch.com</p> </span>
               
-              </div>
+              </div>...
 
               <div className=' w-full md:w-[20%]    h-full flex  flex-col items-center justify-center  '>
               <img
