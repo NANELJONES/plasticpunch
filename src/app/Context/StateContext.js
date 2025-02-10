@@ -201,8 +201,8 @@ export const StateContext = ({ children }) => {
 
 
   useEffect(() => {
-    // fetchAwarenessMaterial()
-    // fetchTips()
+    fetchAwarenessMaterial()
+    fetchTips()
      fetchblog(); // Initial fetch
      fetchEvent()
      
