@@ -31,16 +31,33 @@ const SampleProject = () => {
   
   
   
-  const settings = {
+   const settings = {
     dots: true,
-    infinite: false, // Set to false to prevent endless scrolling
+    infinite: false,
     speed: 500,
-    slidesToShow: "auto", // Show 3 slides on large screens
-    slidesToScroll: 1, // Scroll one slide at a time
-    centerMode: false, // Disable center mode for strict slide control
-    
-
+    slidesToShow: 2, // Show 3 slides at a time
+    slidesToScroll: 1,
+    centerMode: false,
+    variableWidth: false, // Disable variable width for consistent slide sizing
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2, // Show 2 slides on medium screens
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode:false // Show 1 slide on small screens
+          
+          
+        },
+      },
+    ],
   };
+  
 
   return (
     <motion.div 
@@ -55,15 +72,15 @@ const SampleProject = () => {
       </div>
    
    
-      <div className='w-full relative md:left-[30%] lg:left-[40%]    slider-container  md:max-w-[1000px] '>
+      <div className='w-full relative md:left-[30%] lg:left-[40%]      md:max-w-[1000px] '>
    
           <h5 className='text-regular_text  w-full md:w-2/3'>With over 45 tons, (40, 823 kg) of plastics managed and collected, with over 50,000+ participants, here are samples of our projects for your reference</h5>
             <br/>
         <Slider {...settings} className=' '>
           {all_projects.map((each_project, index) => (
         
-            <div className=' md:p-10 w-auto ' key={index}>
-              <div className='relative w-[60vw] h-[60vw] max-w-[300px] max-h-[300px]  transition duration-500   md:w-[18em]  md:h-[18em]   md:max-w-[400px]  md:max-h-[400px]'>
+            <div className=' md:p-10  md:ml-0 w-[20em] md:w-[18em] max-w-[400px] md:max-w-[450px]  lg:max-w-[600px]' key={index}>
+              <div className='relative w-full h-[60vw] max-h-[300px]  transition duration-500 w-full   md:h-[18em]     md:max-h-[400px]'>
                 <Image
                   alt='Project Image'
                   src={each_project?.node?.projectImages[0]?.url ? each_project?.node?.projectImages[0]?.url :"/gallery_bg.jpg"}

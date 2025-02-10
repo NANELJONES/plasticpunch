@@ -16,6 +16,9 @@ import { SampleEvents2 } from "../components/SampleEvents";
 import { SampleEvents3 ,SampleEvents4} from "../components/SampleEvents";
 import OnlineContent from "../components/OnlineContent";
 import { getSingleEvent } from "../api/queries";
+import SampleProject from "../components/SampleProject";
+import IntroStats from "../components/IntroStats";
+import HomeContent from "../components/HomeContent";
 
 const page = () => {
   // The URL and title you'd like to share
@@ -31,8 +34,7 @@ const page = () => {
     <div className="bg-primary_color">
       <Layout1>
 
-      <OnlineContent/>
-     
+    <HomeContent></HomeContent>
       
        </Layout1>
     </div>

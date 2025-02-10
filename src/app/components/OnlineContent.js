@@ -89,13 +89,13 @@ const OnlineContent = () => {
       
 
  <br/>
-      <Slider {...settings} className="mySwiper w-full  ">
+      <Slider {...settings} className= "left-[40%] mySwiper w-full  ">
         {youtube_link.map((each_link, index) => {
           return (
-            <div key={index}>
+            <div key={index} className='ml-2 left-[40%]'>
               <div               className="w-[20em]  border h-[20em] p-4 max-h-[250px] bg-secondary_color md:max-w-[300px]  md:max-h-[300px]" ></div>
 
-               <p className='text-white '>Hello</p>
+               <h4 className='text-white  text-wrap max-w-[300px]'>Super cali fligilistic expliary dotious to th x</h4>
               </div>
           );
         })}

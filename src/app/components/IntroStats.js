@@ -4,11 +4,11 @@ import {ImageContainer,ImageContainer2} from './ImageContainer'
 import AnimateUp from './AnimateUp'
 const IntroStats = ()=>{
     return (
-        <>
+        <div className='flex flex-col gap-6'>
          <IntroStat1></IntroStat1>
          <IntroStats2></IntroStats2>
          <IntroStat3></IntroStat3>
-        </>
+        </div>
        
         
     )
@@ -21,7 +21,7 @@ const IntroStats = ()=>{
 
 const IntroStat1 = () => {
   return (
-    <div className=" mx-auto w-full  relative p-8  flex items-center   md::bg-none">
+    <div className=" mx-auto w-full  relative p-2  flex items-center   md::bg-none">
                 <div className='w-full z-[2] lg:w-2/3 '>
                 <SmallWordAnimation  text="By the year 2050, "></SmallWordAnimation>
                 <WordAnimation  text="There will be more plastics than fishes in the ocean (by weight)"></WordAnimation>
@@ -60,7 +60,7 @@ const IntroStat1 = () => {
 
 const IntroStats2 = () => {
     return (
-      <div className=" mx-auto  relative p-8  flex items-center ">
+      <div className=" mx-auto  relative p-2  flex items-center ">
                   <div className='md:w-full lg:w-[80%] '>
                   <SmallWordAnimation  text="Over 350 million tons"></SmallWordAnimation>
                   <WordAnimation  text="of plastic waste are generated worldwide every year, a quantity that is expected to triple by 2060 if nothing is done."></WordAnimation>
@@ -82,7 +82,7 @@ const IntroStats2 = () => {
 
   const IntroStat3 = () => {
     return (
-      <div className=" mx-auto  relative p-8  flex items-center ">
+      <div className=" mx-auto  relative p-2  flex items-center ">
                   <div className='w-full z-[2] lg:w-2/3 '>
                   <SmallWordAnimation  text="Plastics generally takes"></SmallWordAnimation>
                   <WordAnimation  text="500-1000 years to degrade. Even then, it becomes microplastics, without fully degrading."></WordAnimation>

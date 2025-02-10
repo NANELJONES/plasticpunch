@@ -61,7 +61,10 @@ return (
     {event.node.eventName}
   </h1>
   <p className="text-white">{event.node.eventIntro}</p>
-  <p className="text-white"> { event.node.eventLocation}</p>
+ 
+
+  <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/location_icon.svg"/>  <h6 className="text-white"> { event.node.eventLocation}</h6></span>
+ 
  <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/date_icon.svg"/> <h6 className="text-white"> { GetDate(event.node.eventDatesAndTime[0]) }</h6></span>
  
  <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/time_icon.svg"/> <h6 className="text-white"> { GetTime(event.node.eventDatesAndTime[0]) }</h6></span>
@@ -85,6 +88,9 @@ const HomeContent = () => {
 
   useEffect(() => {
     // Extract 2 blogs and add "type: news&blog"
+    if(!blog && !events){
+      return
+    }
 
     const blogs = blog.data.slice(0, 2).map((blog) => ({
       ...blog,
@@ -99,11 +105,11 @@ const HomeContent = () => {
 
     // Merge both lists
     setSlides([...blogs, ...eventList]);
-  }, []);
+  }, [blog, events]);
 
   return (
-    <div className="w-full mx-auto   ">
-      {/* <h2 className="text-3xl font-bold text-center mb-6">Latest Blogs & Events</h2> */}
+    <div className="w-full mx-auto  mt-[5em]  ">
+      {/* <h2 className="text-3xl text-white font-bold text-center mb-6">Latest Blogs & Events</h2> */}
       <Swiper
        pagination={{ clickable: true }}
        navigation={true}
