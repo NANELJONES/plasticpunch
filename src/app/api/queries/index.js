@@ -89,7 +89,7 @@ export const getSingleProject = async (slug) => {
 
 // getGallery
 // getGallery
-export const getGallery = async (first = 10, after = null) => {
+export const getGallery = async (first = 2, after = null) => {
   const query = gql`
     query MyQuery($first: Int, $after: String) {
       galleriesConnection(first: $first, after: $after) {
@@ -148,19 +148,112 @@ export const getTips = async (first = 10, after = null) => {
     console.error("There was an error fetching tips:", error);
     return { edges: [], pageInfo: { hasNextPage: false, endCursor: null } };
   }
+
+
 };
 
 
 
 
-export const getEvents = async ()=>{
+export const getEvents = async (first = 1, after = null)=>{
   const query = gql`
-  
-  
-  
-  
-  
-  `
+  query MyQuery($first: Int, $after: String) {
+    eventsConnection(first: $first, after: $after) {
+      edges {
+        node {
+          eventDetails {
+            html
+            raw
+          }
+          eventIntro
+          eventGallery {
+            url
+          }
+          eventName
+          eventLocation
+          eventType
+          externalEventLink
+          ticketPrice
+          slug
+          eventDatesAndTime
+          eventCoverImage {
+            url
+          }
+        }
+        cursor
+      }
+      pageInfo {
+        hasNextPage
+        endCursor
+      }
+    }
+  }
+`;
+
+
+  try {
+    const response = await request(graphqlAPI, query, { first, after });
+    // console.log("these are the events",response)
+    return {
+      data: response.eventsConnection.edges,
+      pageInfo: response.eventsConnection.pageInfo,
+    };
+  } catch (error) {
+    console.error("There was an error fetching tips:", error);
+    return { edges: [], pageInfo: { hasNextPage: false, endCursor: null } };
+  }
+
+
+
+}
+
+
+export const getSingleEvent = async (slug)=>{
+  const query = gql`
+  query MyQuery($slug: String!) {
+    eventsConnection(where: { slug: $slug }) {
+      edges {
+        node {
+          eventDetails {
+            html
+            raw
+          }
+          eventIntro
+          eventGallery {
+            url
+          }
+          eventName
+          eventLocation
+          eventType
+          externalEventLink
+          ticketPrice
+          slug
+          eventDatesAndTime
+          eventCoverImage {
+            url
+          }
+        }
+        cursor
+      }
+    
+    }
+  }
+`;
+
+
+  try {
+    const response = await request(graphqlAPI, query, { slug });
+    console.log("these is the events ",response?.eventsConnection?.edges[0]?.node)
+    return   response?.eventsConnection?.edges[0]?.node
+     
+ 
+  } catch (error) {
+    console.error("There was an error fetching tips:", error);
+    return null;
+  }
+
+
+
 }
 
 
@@ -287,10 +380,11 @@ export const getAwarenessMaterials = async (first = 10, after = null) => {
 
 export const getClients = async ()=>{
   const query = gql `
- query MyQuery {
+query MyQuery {
   clientsConnection {
     edges {
       node {
+        partnerName
         partnerLogo {
           url
         }

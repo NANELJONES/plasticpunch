@@ -1,94 +1,56 @@
+import dynamic from "next/dynamic";
 
-import { SingleLine } from "./components/Lines";
-import Image from "next/image";
-import Donate from "./components/Donate";
-import Header from "./components/Header";
-import Intro from "./components/Intro";
+const Donate = dynamic(() => import("./components/Donate"));
+const Header = dynamic(() => import("./components/Header"));
+const Intro = dynamic(() => import("./components/Intro"));
+const Layout1 = dynamic(() => import("./layout/Layout1"));
+const AbstractCube = dynamic(() => import("./components/3D/AbstractCube"));
+const EducationalContent = dynamic(() => import("./components/EducationalContent"));
+const SampleProject = dynamic(() => import("./components/SampleProject"));
+const TheSolution = dynamic(() => import("./components/TheSolution"));
 
-import Layout1 from "./layout/Layout1";
-import AbstractCube from "./components/3D/AbstractCube";
-import EducationalContent from "./components/EducationalContent";
-import SampleProject from "./components/SampleProject";
-import TheSolution from "./components/TheSolution";
-import SampleGallery from "./components/SampleGallery";
-import Society from "./components/Society";
-import Clients from "./components/Clients";
-import Testimonials from "./components/Testimonials";
-import {TextAnimation, WordAnimation, SmallWordAnimation} from "./components/TextAnimation";
-import IntroStats from "./components/IntroStats";
+const Society = dynamic(() => import("./components/Society"));
+const Clients = dynamic(() => import("./components/Clients"));
+const Testimonials = dynamic(() => import("./components/Testimonials"));
 
-import ChangeMakers from "./components/ChangeMakers";
-import SiteMap from "./components/SiteMap";
-import DailyContent from "./components/DailyContent";
-import BlogSample from "./components/BlogSample";
-import {SampleEvents3} from "./components/SampleEvents";
-import HomeContent from "./components/HomeContent";
+const IntroStats = dynamic(() => import("./components/IntroStats"));
+const ChangeMakers = dynamic(() => import("./components/ChangeMakers"));
+const SiteMap = dynamic(() => import("./components/SiteMap"));
+const DailyContent = dynamic(() => import("./components/DailyContent"));
+const BlogSample = dynamic(() => import("./components/BlogSample"));
+
+const SampleEvents4 = dynamic(() => import("./components/SampleEvents").then(mod => mod.SampleEvents4));
+const HomeContent = dynamic(() => import("./components/HomeContent"));
+
 export default function Home() {
   return (
     <div className="bg-[#1E2D7D]">
-    
- 
-    <AbstractCube></AbstractCube> 
+      <AbstractCube></AbstractCube>
+      <Layout1>
 
-    <Layout1>
-    <div className="flex  flex-col lg:flex-row gap-4 relative h-auto bg-black-200 w-full  ">
-    
-      <div className="flex flex-col p-2 md:p-8  z-10 gap-10 w-full " >
-      <HomeContent></HomeContent>
-      <IntroStats></IntroStats>
-      <TheSolution/>
-      <Intro></Intro>
+        <div className="flex flex-col lg:flex-row gap-4 relative h-auto bg-black-200 w-full">
+          <div className="flex flex-col p-2 md:p-8 z-10 gap-10 w-full">
+            <HomeContent />
+            <IntroStats />
+            <TheSolution />
+            <Intro />
+            <Society />
+            <SampleProject />
+            <BlogSample />
+            <SampleEvents4 />
+            <Donate />
+            <DailyContent />
+            <ChangeMakers />
+          </div>
+        </div>
+        <br/>
+        <br/>
+        <Clients />
+        <br/>
+        <br/>
 
-    
-       
-      
-           
-                  <Society></Society>
-           <SampleProject/>
-         <BlogSample></BlogSample>
-         <SampleEvents3></SampleEvents3>
-           
-           <Donate></Donate>
-           <DailyContent></DailyContent>
-          
-           <ChangeMakers></ChangeMakers>
-       
-       
-   
-         
-         
-         
-  
-           
-
-
-       
-           
-         
-           
-          
-          
-       </div>
-
-
-
+        <Testimonials></Testimonials>
+      </Layout1>
     </div>
- 
-    <Clients></Clients>
-   
-    {/* <Testimonials></Testimonials> */}
-    <SiteMap></SiteMap>
-    
-
-    </Layout1>
-
-
-
-    
-    
-
-    
-    </div>
-    
   );
 }

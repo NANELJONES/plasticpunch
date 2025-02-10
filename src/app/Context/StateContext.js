@@ -2,7 +2,8 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
 import { getBlogs } from "../api/blog"; // Import the modified data-fetching function
 import Toast from "../components/Toast";
-import { getAwarenessMaterials, getTips } from "../api/queries";
+import { getAwarenessMaterials, getTips, getEvents } from "../api/queries";
+import moment from "moment";
 
 const Context = createContext();
 
@@ -33,7 +34,7 @@ export const StateContext = ({ children }) => {
   });
 
 
-  const [events, getEvents] = useState({
+  const [events, setEvents] = useState({
     data: [],
     pageInfo: { hasNextPage: true, endCursor: null },
     isLoading: false,
@@ -43,6 +44,14 @@ export const StateContext = ({ children }) => {
 
 
 
+  const GetDate = (dateTime) => {
+    return moment(dateTime).format("DD MMM YYYY");
+  };
+
+
+  const GetTime = (dateTime) => {
+    return moment(dateTime).format("hh:mm A");
+  };
 
 
 
@@ -83,6 +92,42 @@ export const StateContext = ({ children }) => {
     }
   }, [blog.isLoading, blog.pageInfo.hasNextPage, blog.pageInfo.endCursor]);
   
+
+
+  const fetchEvent = useCallback(async ()=>{
+
+    if (events.isLoading || !events.pageInfo.hasNextPage) return; // Prevent multiple fetches
+    setEvents((prev)=>(
+      {
+        ...prev,
+        isLoading:true
+        
+        }
+    ))
+
+    try{
+      const { data, pageInfo } = await getEvents(5, events.pageInfo.endCursor); // Ensure this returns the correct structure
+      setEvents((prev)=>({
+        ...prev,
+        data:[...prev.data, ...data],
+        pageInfo: {
+          hasNextPage: pageInfo.hasNextPage,
+          endCursor: pageInfo.endCursor,
+        },
+        isLoading: false, // Set loading to false after fetching
+      }))
+  
+    }catch(err) {
+      setEvents((prev)=>({
+        ...prev,
+        isLoading:false, 
+        
+      }))
+    }
+    
+
+  }, [events.isLoading, events.pageInfo.hasNextPage, events.pageInfo.endCursor])
+
 
   const fetchAwarenessMaterial = useCallback(async () => {
 
@@ -157,8 +202,10 @@ export const StateContext = ({ children }) => {
 
   useEffect(() => {
     // fetchAwarenessMaterial()
-    fetchTips()
-    // fetchblog(); // Initial fetch
+    // fetchTips()
+     fetchblog(); // Initial fetch
+     fetchEvent()
+     
   }, []);
 
 
@@ -171,6 +218,10 @@ export const StateContext = ({ children }) => {
         set_show_processing,
         img_url,
         set_url,
+        GetDate,
+        GetTime,
+        fetchEvent,
+        events,
       
         blog, // Expose blog state
         fetchblog, // Expose fetchblog function

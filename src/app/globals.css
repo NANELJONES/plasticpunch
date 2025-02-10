@@ -65,7 +65,12 @@ scroll-behavior: smooth;
 }
 
 
-
+.limited-text {
+  width: 14ch; /* Limits text to approximately 14 characters */
+  white-space: nowrap; /* Prevents wrapping */
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
 
 
 
@@ -305,13 +310,61 @@ gap:  3px;
     @apply text-primary_color text-lg  leading-[1.4];
   }
   
-  
+  .rich-text h1,
+.rich-text h2,
+.rich-text h3,
+.rich-text h4,
+.rich-text h5,
+.rich-text h6,
+.rich-text p,
+.rich-text span {
+  color: white !important;
+}
   
   
   button{
     @apply rounded-full bg-bg_gradient p-4 border-2
   }
 
+.custom-prev,
+.custom-next {
+  position: absolute;
+  top: 60%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  background-color: white;
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: #ffffff;
+}
+
+.custom-prev {
+  left: -20px;
+}
+
+.slick-arrow-custom{
+  width: 100px;
+  height: 100px;
+}
+
+.custom-next {
+  right: -20px;
+}
  
 
  

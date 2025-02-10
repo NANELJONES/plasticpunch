@@ -33,11 +33,14 @@ const Society = () => {
   ];
 
   return (
-    <div className="relative md:p-8 shadow-md backdrop-blur-md lg:backdrop-none lg:shadow-none lg:bg-none md:bg-none flex flex-col gap-10 p-10">
-      <h1 className=" leading-[1.5em] md:w-[70%] text-white">
+    <div className="relative md:p-2 shadow-md backdrop-blur-md lg:backdrop-none lg:shadow-none lg:bg-none md:bg-none flex flex-col gap-10 p-4">
+      <h1 className=" hidden  md:block leading-[1.5em]  md:w-[70%] text-white">
        <p className='text-white'>Our</p> Sustainable Development Goals (CSR)
       </h1>
    
+      <h3 className=" md:hidden  md:block leading-[1.5em]  md:w-[70%] text-white">
+       <p className='text-white'>Our</p> Sustainable Development Goals (CSR)
+      </h3>
     
 
       <p className ="md:w-2/3 text-white">

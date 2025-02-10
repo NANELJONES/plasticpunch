@@ -10,6 +10,7 @@ import ShareSocials from "@/app/components/ShareSocials";
 import CommentsForm from "@/app/components/Blog/CommentsForm";
 import Comments from "@/app/components/Blog/Comments";
 import { GetSingleBlogPost, GetSimilarPosts } from "@/app/api/blog";
+import { RichText } from "@graphcms/rich-text-react-renderer";
 
 const Page = () => {
   const pathname = usePathname();
@@ -81,6 +82,19 @@ const Page = () => {
     return <div>Loading...</div>;
   }
 
+
+
+  const RichTextRenderer = ({ content }) => {
+ 
+    if(content ){
+      const fixedHtml = content.replace(/&lt;br\s*\/?&gt;/g, "<br/>");
+
+      return <div dangerouslySetInnerHTML={{ __html: fixedHtml }} />;
+    }else {
+      return;
+    }
+  };
+
   return (
     <Layout1>
       <div className="flex flex-col gap-10 md:flex-row-reverse md:mt-[3em]">
@@ -98,15 +112,9 @@ const Page = () => {
               Posted On: {dateReturner(post.createdAt)}
             </p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            {post?.category?.map((cat, index) => (
-              <p className="text-white bg-primary_color p-4 rounded-lg" key={index}>
-                {cat.category}
-              </p>
-            ))}
-          </div>
+
           <ShareSocials
-            shareUrl="/"
+            shareUrl={`/blog/${post.slug}`}
             shareTitle={post.title}
             shareDescription={post.excerpt}
           />
@@ -119,13 +127,17 @@ const Page = () => {
             />
           </div>
 
-          <div
-            className=""
-            dangerouslySetInnerHTML={{
-              __html: post.content?.html,
-            }}
-          />
+          <RichText content={post.content.raw}></RichText>
+
+
           <br />
+          <div className="flex flex-wrap gap-2">
+            {post?.category?.map((cat, index) => (
+              <p className="text-white bg-primary_color p-4 rounded-lg" key={index}>
+                {cat.category}
+              </p>
+            ))}
+          </div>
           <br />
           <Comments slug={slug} />
           <CommentsForm slug={slug} />

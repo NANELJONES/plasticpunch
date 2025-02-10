@@ -7,13 +7,13 @@ const Donate = () => {
 
     <div  
     
-    className=' w-full overflow-hidden min-h-[1000px] md:min-h-screen  max-h-[1000px] md:max-h-[1000px]  border-l-1 border-r-1 relative  flex-col p-10'>
+    className=' w-full overflow-hidden min-h-[1000px]   md:min-h-screen  max-h-[1000px] md:max-h-[1000px]  border-l-1 border-r-1 relative  flex-col p-10'>
      
 
         <h4 className='w-full text-white font-semibold  md:w-2/3 '>Help Us Punch Out Plastic Waste: <br></br> Your Contribution Fuels a Cleaner, <br/> Greener Future</h4>
         <button className='mt-2 border-white bg-none bg-primary_color w-full max-w-[200px] rounded-2 '><p className='text-white'>Read More</p></button>
         
-        <div className=' md:absolute md:top-[-5em] md:right-0  '>
+        <div className=' lg:absolute md:top-[-5em] md:right-0  '>
           <img 
           style={{transformOrigin: 'bottom right',}}
           src='/Donate/Top Hand.png' className='animate-smallRotation  max-w-[600px] w-[80vw] md:w-[40em] absolute top-20 right-[-2em] z-10'></img>

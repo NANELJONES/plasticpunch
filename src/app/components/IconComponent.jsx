@@ -13,8 +13,8 @@ const IconComponent = ({img_src, info}) => {
 const IconComponent1 = ({img_src, info}) => {
     return (
       <div className='flex gap-4 items-center'>
-          <img src={img_src} alt="icon" className="w-8 h-8" />
-          <h5 className='w-full'>{info}</h5>     
+         <div className='bg-white rounded-4 p-2 rounded-lg shadow-md'> <img src={img_src} alt="icon" className="w-8 " /></div>
+          <h5 className='w-full text-white'>{info}</h5>     
       </div>
     )
   }

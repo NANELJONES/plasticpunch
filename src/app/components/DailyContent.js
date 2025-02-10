@@ -4,7 +4,7 @@ import { tip, awareness_content } from "../Data/Data";
 import Image from "next/image";
 import { Button2 } from "./Buttons";
 import Slider from "react-slick";
-import YoutubeContent from "./YoutubeContent";
+import OnlineContent from "./OnlineContent";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useStateContext } from "../Context/StateContext";
@@ -96,7 +96,7 @@ const DailyContent = () => {
 
 
       {/* New Youtube inof */}
-      <YoutubeContent></YoutubeContent>
+      {/* <OnlineContent></OnlineContent> */}
     </div>
   );
 };

@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import { Button2 , Button1, Button3} from "./Buttons";
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { useStateContext } from "../Context/StateContext";
 
 
 // ✅ Rename blog_content to BlogContent (React components must be capitalized)
@@ -20,9 +21,12 @@ const BlogContent = ({ blog }) => {
     >
 
       <div className="bg-gradient-to-t from-[#1E2D7D] to-transparent h-[80%] absolute bottom-0 w-full"></div>
-      <div  className="w-full p-[3em] z-[10] flex flex-col gap-4 md:w-2/3 lg:w-1/2  absolute bottom-0 ">
+      <div  className="w-full p-[3em] z-[10] flex flex-col gap-4 md:w-2/3   absolute bottom-0 ">
       <p  className="text-white">{blog.node.contentType}</p>
-      <h1 className=" text-white ">
+      <h3 className="lg:hidden  text-white ">
+        {blog.node.title}
+      </h3>
+      <h1 className=" hidden lg:block text-white ">
         {blog.node.title}
       </h1>
       <p className="text-white">{blog.node.excerpt}</p>
@@ -36,7 +40,10 @@ const BlogContent = ({ blog }) => {
 };
 
 
+
+
 const EventPost = ({event})=>{
+  const {GetDate, GetTime} = useStateContext()
 return (
   <div 
   className="relative w-full h-full bg-cover "
@@ -44,14 +51,22 @@ return (
   > 
   
   <div className="rounded-lg bg-gradient-to-t from-[#1E2D7D] to-transparent h-[80%] absolute bottom-0 w-full"></div>
-  <div  className="w-full z-[10] p-[3em] flex flex-col gap-2 md:w-2/3 lg:w-1/2  absolute bottom-0 ">
+  <div  className="w-full z-[10] p-[3em] flex flex-col gap-2 md:w-2/3   absolute bottom-0 ">
   <p  className="text-white">{event.node.eventType}</p>
-  <h1 className=" text-white ">
+  <h4 className="  lg:hidden text-white ">
+    {event.node.eventName}
+  </h4>
+
+  <h1 className="hidden lg:block text-white ">
     {event.node.eventName}
   </h1>
   <p className="text-white">{event.node.eventIntro}</p>
-  <p className="text-white">{event.node.eventLocation}</p>
-  <p className="text-white">{event.node.eventDatesAndTime[0]}</p>
+  <p className="text-white"> { event.node.eventLocation}</p>
+ <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/date_icon.svg"/> <h6 className="text-white"> { GetDate(event.node.eventDatesAndTime[0]) }</h6></span>
+ 
+ <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/time_icon.svg"/> <h6 className="text-white"> { GetTime(event.node.eventDatesAndTime[0]) }</h6></span>
+ 
+ 
   <Button3 link_address={`/blog/${event.node.slug}`} title="Read More" > </Button3>
 
 
@@ -64,17 +79,20 @@ return (
 
 const HomeContent = () => {
   const [slides, setSlides] = useState([]);
+  const {blog, events} = useStateContext()
+
 
 
   useEffect(() => {
     // Extract 2 blogs and add "type: news&blog"
-    const blogs = blog_info.data.postsConnection.edges.slice(0, 2).map((blog) => ({
+
+    const blogs = blog.data.slice(0, 2).map((blog) => ({
       ...blog,
       type: "news&blog",
     }));
 
     // Extract 2 events and add "type: event"
-    const eventList = events.data.eventsConnection.edges.slice(0, 2).map((event) => ({
+    const eventList = events.data.slice(0, 2).map((event) => ({
       ...event,
       type: "event",
     }));
@@ -84,7 +102,7 @@ const HomeContent = () => {
   }, []);
 
   return (
-    <div className="w-full mx-auto  ">
+    <div className="w-full mx-auto   ">
       {/* <h2 className="text-3xl font-bold text-center mb-6">Latest Blogs & Events</h2> */}
       <Swiper
        pagination={{ clickable: true }}

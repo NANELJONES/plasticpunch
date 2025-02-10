@@ -21,7 +21,7 @@ const IntroStats = ()=>{
 
 const IntroStat1 = () => {
   return (
-    <div className=" mx-auto w-full  relative p-8  flex items-center shadow-md md:backdrop-blur-md md::backdrop-none md:shadow-none md::bg-none">
+    <div className=" mx-auto w-full  relative p-8  flex items-center   md::bg-none">
                 <div className='w-full z-[2] lg:w-2/3 '>
                 <SmallWordAnimation  text="By the year 2050, "></SmallWordAnimation>
                 <WordAnimation  text="There will be more plastics than fishes in the ocean (by weight)"></WordAnimation>
@@ -32,7 +32,7 @@ const IntroStat1 = () => {
 
 <AnimateUp>
             <div  className='relative left-[6em] top-[3em] lg:top-0 lg:left-0'>
-            <ImageContainer2 className="" source="/our_culture.jpeg"></ImageContainer2>
+            <ImageContainer2 className="" source="/StatsPics/Fish1.png"></ImageContainer2>
             </div>
             </AnimateUp>
 
@@ -41,7 +41,7 @@ const IntroStat1 = () => {
 
 
             <div className='hidden lg:block lg:ml-[10em] lg:mt-[-5em]'>
-            <ImageContainer source="/our_culture.jpeg"></ImageContainer>
+            <ImageContainer source="/StatsPics/Fish2.png"></ImageContainer>
             </div>
 
             </AnimateUp>
@@ -90,9 +90,9 @@ const IntroStats2 = () => {
   
       <div className=' hidden md:flex w-2/3 items-center  absolute right-[2em]'>
   
-              <ImageContainer source="/our_culture.jpeg"></ImageContainer>
+              <ImageContainer source="/StatsPics/Trash1.png"></ImageContainer>
               <div className='mt-[15em] ml-[2em]'>
-              <ImageContainer2 source="/our_culture.jpeg"></ImageContainer2>
+              <ImageContainer2 source="/StatsPics/Trash2.png"></ImageContainer2>
               </div>
       </div>
   

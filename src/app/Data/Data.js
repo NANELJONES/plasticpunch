@@ -272,7 +272,113 @@ export const events= {
               "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9sj60qf07me00fbn0rl"
             }
           }
-        }
+        },
+        {
+          "node": {
+            "eventDatesAndTime": [
+              "2025-01-15T03:15:00+00:00",
+              "2025-01-20T03:25:00+00:00"
+            ],
+            "eventDetails": {
+              "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
+            },
+            "eventGallery": [
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
+              }
+            ],
+            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
+            "eventLocation": ["East Legon"],
+            "eventName": "Erudite Beach Cleanup",
+            "eventType": "beachEvent",
+            "externalEventLink": "https://www.youtube.com/watch?v=HYv55DhgTuA&t=61s",
+            "slug": null,
+            "ticketPrice": [
+              "Singles - Gh 20.00",
+              "Free "
+            ],
+            "eventCoverImage": {
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+            }
+          }
+        },
+        {
+          "node": {
+            "eventDatesAndTime": [
+              "2025-01-15T03:15:00+00:00",
+              "2025-01-20T03:25:00+00:00"
+            ],
+            "eventDetails": {
+              "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
+            },
+            "eventGallery": [
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
+              }
+            ],
+            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
+            "eventLocation": ["East Legon"],
+            "eventName": "Erudite Beach Cleanup",
+            "eventType": "beachEvent",
+            "externalEventLink": "https://www.youtube.com/watch?v=HYv55DhgTuA&t=61s",
+            "slug": null,
+            "ticketPrice": [
+              "Singles - Gh 20.00",
+              "Free "
+            ],
+            "eventCoverImage": {
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+            }
+          }
+        },
+        {
+          "node": {
+            "eventDatesAndTime": [
+              "2025-01-15T03:15:00+00:00",
+              "2025-01-20T03:25:00+00:00"
+            ],
+            "eventDetails": {
+              "html": "<h2>What is Lorem Ipsum?</h2><p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p><h2>Why do we use it?</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p><p></p><h2>Where does it come from?</h2><p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from </p>"
+            },
+            "eventGallery": [
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm53phn260zvl07po86o831z1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+              },
+              {
+                "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2qcbb8kz6wp07mlggv60sz0"
+              }
+            ],
+            "eventIntro": "This is a test of the type of event that we are going to be dealing with",
+            "eventLocation": ["East Legon"],
+            "eventName": "Erudite Beach Cleanup",
+            "eventType": "beachEvent",
+            "externalEventLink": "https://www.youtube.com/watch?v=HYv55DhgTuA&t=61s",
+            "slug": null,
+            "ticketPrice": [
+              "Singles - Gh 20.00",
+              "Free "
+            ],
+            "eventCoverImage": {
+              "url": "https://ap-south-1.graphassets.com/cm534uu9a009b01uxh4534bw9/cm2wge9t066fg07mt4f6ubid1"
+            }
+          }
+        },
+        
       ]
     }
   }

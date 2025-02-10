@@ -59,7 +59,7 @@ const Testimonials = () => {
   return (
     <div className="w-full border p-8 border-secondary_color">
       <div className="gap-8">
-        <h1>Our <br /> Testimonials</h1>
+        <h1 className='text-white'>Our <br /> Testimonials</h1>
       </div>
 
       <Swiper

@@ -5,24 +5,29 @@ import { motion } from 'framer-motion';
 import { events } from '../Data/Data'
 import {EventCard,EventCard2} from './Event/EventCard'
 import { Button1, Button2 } from './Buttons'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import AnimateUp from './AnimateUp';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const SampleEvents = () => {
+  const latest_event = events.data.eventsConnection.edges[0].node;
 
-    const latest_event  = events.data.eventsConnection.edges[0].node
   return (
-    <div className='h-auto'  >
-        <h1>Events</h1>
-        <div className='columns-[300px] overflow-visible '>
-        {events.data.eventsConnection.edges.slice(1,5).map((each_event, index)=>{
-          return <EventCard event_data={each_event.node}></EventCard>
-        })}
-        </div>
-     
-        
-
+    <div className="h-auto">
+      <h1>Events</h1>
+      <div className="flex items-center flex-wrap justify-around overflow-visible">
+        {events.data.eventsConnection.edges.slice(1, 5).map((each_event, index) => (
+          <div key={index} className={index % 2 !== 0 ? "mt-[5em]" : ""}>
+            <EventCard event_data={each_event.node} />
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
 
 
@@ -92,7 +97,7 @@ const SampleEvents3 = () => {
     <div className="flex flex-col gap-[2em] items-center md:mt-[6em] border-t-4 md:py-[6em]">
       <h1 className="self-start text-white">Our<br/> Latest Events</h1>
 
-      <div className="w-full flex flex-wrap gap-1 items-center justify-between">
+      <div className="w-full columns-3 gap-1 items-center justify-between">
         {events.data.eventsConnection.edges.map((each_event, index) => {
           // Determine the size based on whether the index is even or odd
           const size = index % 2 === 0 ? '25em' : '20em';
@@ -136,4 +141,45 @@ const SampleEvents3 = () => {
     </div>
   );
 };
-export   {SampleEvents,SampleEvents2 ,SampleEvents3};
+
+
+const SampleEvents4 = () => {
+  const latest_event = events.data.eventsConnection.edges[0].node;
+
+  return (
+    <div className="h-auto relative">
+      <h1 className='text-white'>Our Latest Events</h1>
+     
+      <Swiper
+      modules={[Autoplay, Pagination ]}
+      spaceBetween={10}
+      slidesPerView={1}
+      autoplay={{ delay: 3000, disableOnInteraction: true }} // ✅ Fix autoplay
+      breakpoints={{
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      }}
+      // navigation={true} // Enable default navigation
+      pagination={{ clickable: true }}
+      className="mySwiper"
+      >
+        {events.data.eventsConnection.edges.slice(1, 5).map((each_event, index) => (
+          <SwiperSlide key={index} className='p-0'>
+              <AnimateUp>  <div className={`transition-transform duration-300   ${index % 2 !== 0 ? " scale-[0.8] hover:scale-[1]" : "scale-[0.9]"}`}>
+      <EventCard event_data={each_event.node} />
+  </div></AnimateUp>
+</SwiperSlide>
+
+        ))}
+      </Swiper>
+
+      {/* Custom Navigation Buttons */}
+      {/* <button className="custom-prev">‹</button>
+      <button className="custom-next">›</button> */}
+    </div>
+  );
+};
+
+
+export   {SampleEvents,SampleEvents2 ,SampleEvents3, SampleEvents4};

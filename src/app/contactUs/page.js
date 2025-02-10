@@ -5,17 +5,21 @@ import "react-toastify/dist/ReactToastify.css";
 import emailjs from "@emailjs/browser";
 import Link from "next/link";
 import Image from "next/image";
+import { useStateContext } from "../Context/StateContext";
 
 const ContactPage = () => {
   const form = useRef();
   const [contact, setContact] = useState({
     user_name: "",
-    user_email: "",
+    email: "",
     message: "",
   });
 
+
+  const  {set_show_processing}  = useStateContext()
+ 
   const resetter = () => {
-    setContact({ user_name: "", user_email: "", message: "" });
+    setContact({ user_name: "", email: "", message: "" });
   };
 
   const successToast = () => {
@@ -38,6 +42,8 @@ const ContactPage = () => {
 
   const sendEmail = async (e) => {
     e.preventDefault();
+    set_show_processing(true)
+
 
     try {
       const result = await emailjs.sendForm(
@@ -47,10 +53,12 @@ const ContactPage = () => {
         process.env.NEXT_PUBLIC_P_KEY
       );
       console.log("Email sent successfully:", result);
+      set_show_processing(false);
       successToast();
       resetter();
     } catch (error) {
       console.error("Email sending error:", error);
+      set_show_processing(false);
       failedToast("Failed to send message. Try again later.");
     }
   };
@@ -96,11 +104,11 @@ const ContactPage = () => {
           <div className="flex flex-col gap-2">
             <p className="font-light text-white">Email:</p>
             <input
-              value={contact.user_email}
+              value={contact.email}
               onChange={(e) =>
-                setContact({ ...contact, user_email: e.target.value })
+                setContact({ ...contact, email: e.target.value })
               }
-              name="user_email"
+              name="email"
               type="email"
               className="bg-transparent border text-white p-2 text-[0.8em]"
               placeholder="Please Enter Your Email"
@@ -130,7 +138,7 @@ const ContactPage = () => {
             SEND MESSAGE
           </button>
 
-          <Link href="mailto:info@atlanticcrest.org">
+          <Link href="mailto:infoplasticpunch@gmail.com">
             <p className="text-white text-center">
               To Join Us, Send Your Resume/CV
             </p>

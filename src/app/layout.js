@@ -5,7 +5,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import NextTopLoader from 'nextjs-toploader';
 import Loading from "./components/Loading"
-
+import {ReactLenis}  from  "./utils/Lenis"
 import { StateContext } from "./Context/StateContext";
 
 
@@ -45,7 +45,9 @@ export default function RootLayout({ children }) {
       <NextTopLoader 
       />
             <Nav/> 
+            <ReactLenis root>
             {children}
+            </ReactLenis>
             <Footer/>
         </StateContext>
         </Loading>

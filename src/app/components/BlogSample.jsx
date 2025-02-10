@@ -38,7 +38,7 @@ const BlogSample = () => {
                     <div className='md:w-[45%]   flex flex-col items-start gap-4'>
                                 
                     {blog.data.slice(1,4).map((each_blog,index)=>{
-                            return  <AnimateUp key={index}><div className='relative px-2 ' >
+                            return  <AnimateUp key={index}><div className='relative px-2 py-2 border-b-2  ' >
                           <Link href={`/blog/${first_blog_data?.node?.slug}`}> <h6 className='text-white'>{each_blog?.node?.title} </h6> </Link> 
                             <p className='italic text-white'>by:  {each_blog.node?.author?.name}</p>
 

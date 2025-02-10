@@ -20,7 +20,7 @@ const Page = () => {
   const fetchGallery = useCallback(async () => {
     if (isLoading || !hasNextPage) return; // Prevent multiple fetches
     console.log(gallery)
-
+    console.log("gallery is being fetched")
     setIsLoading(true);
     try {
       const { edges, pageInfo } = await getGallery(10, endCursor);
@@ -45,6 +45,7 @@ const Page = () => {
 
   useEffect(() => {
     fetchGallery(); // Initial fetch on component mount
+
   }, [fetchGallery]);
 
   useEffect(() => {
@@ -66,7 +67,7 @@ const Page = () => {
         <div className="flex p-10 md:p-20 items-center justify-around flex-wrap gap-4">
           {gallery.map((item, index) => (
             <div key={index} className="w-full  ">
-              <h4 className=" ">  {`-${item.node.title}`}</h4>
+              <h3 className=" ">  {`-${item.node.title}`}</h3>
               <div className="w-full flex flex-wrap  justify-between ">
               {item.node.imageContent.map((img, imgIndex) => (
                 <motion.div

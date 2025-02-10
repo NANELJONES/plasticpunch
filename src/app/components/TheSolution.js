@@ -14,7 +14,7 @@ const TheSolution = () => {
 
   return (
     <AnimateUp>
-      <div className="bg-primary_color w-full h-auto  gap-2 flex flex-col  items-center lg:block lg:h-screen lg:max-h-[800px] lg:mt-20 p-10">
+      <div className="bg-primary_color w-full h-auto  gap-2 flex flex-col  items-center lg:block lg:h-screen lg:px-8 lg:max-h-[800px] lg:mt-20 py-10">
         <h5 className="text-regular_text">The Solution?</h5>
         <Swiper
          autoplay={{
@@ -31,15 +31,15 @@ const TheSolution = () => {
         >
           {solutions.map((one_sol, index) => (
             <SwiperSlide key={index}>
-              <h1 className="text-regular_text font-bold text-[4em] text-center  lg:text-left  md:text-[4.5em] leading-[1em] lg:text-[150px]">
+              <h1 className="text-regular_text font-bold text-[6em] text-center  lg:text-left   leading-[1em] lg:text-[150px]">
                 {one_sol}
               </h1>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        <div className= "lg:absolute md:  lg:bottom-[2em] lg:right-[2em] md:w-[30em] md:h-[30em]  w-[70vw] h-[70vw] lg:max-w-[500px] lg:max-h-[400px]"> 
-          <img src="/ImageFist.svg" alt="earth" className="w-full h-full object-cover"/>
+        <div className= "lg:absolute md:  lg:bottom-[2em] lg:right-[2em] md:w-[30em] md:h-[30em]  w-full h-[70vw] lg:max-w-[700px] lg:max-h-[700px]"> 
+          <img src="/ImageFist.svg" alt="earth" className="w-full  h-full object-cover"/>
 
         </div>
       

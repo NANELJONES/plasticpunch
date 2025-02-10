@@ -104,7 +104,7 @@ const Blog = () => {
   return (
     <>
     <h3 className='mt-10'>Our Latest Blogs</h3>
-    {/* <Categories></Categories> */}
+    <Categories></Categories>
   
     <div className='flex flex-col md:flex-row gap-4 xl:gap-[5em] '>
             <div className='md:w-[70%] flex flex-col gap-4 '>

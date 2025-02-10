@@ -54,7 +54,7 @@ try{
 }
 
 
-export const getBlogs = async (first = 10, after = null) => {
+export const getBlogs = async (first = 3, after = null) => {
   const query = gql`
     query MyQuery($first: Int, $after: String) {
       postsConnection(first: $first, after: $after) {
@@ -287,7 +287,7 @@ export const GetSingleBlogPost = async (slug) => {
       title
       excerpt
       content {
-        html
+        raw
       }
       contentType
       category {
