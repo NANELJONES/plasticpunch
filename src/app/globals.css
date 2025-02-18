@@ -65,13 +65,19 @@ scroll-behavior: smooth;
 }
 
 
-.limited-text {
-  width: 14ch; /* Limits text to approximately 14 characters */
+.limited-text_header {
+  max-width: 30ch; /* Limits text to a readable width */
   white-space: nowrap; /* Prevents wrapping */
   overflow: hidden; /* Hides overflowed text */
   text-overflow: ellipsis; /* Adds "..." if text overflows */
 }
 
+.limited-text_normal {
+  max-width: 80ch; /* Limits text width */
+  white-space: nowrap;
+  overflow: hidden; /* Hides overflowed text */
+  text-overflow: ellipsis; /* Adds "..." if text overflows */
+}
 
 
 .normal_div{
@@ -309,7 +315,10 @@ gap:  3px;
   h6 {
     @apply text-primary_color text-lg  leading-[1.4];
   }
-  
+  .bg_blur{
+    @apply backdrop-blur-md  lg:shadow-none ;
+}
+
   .rich-text h1,
 .rich-text h2,
 .rich-text h3,
@@ -325,6 +334,8 @@ gap:  3px;
   button{
     @apply rounded-full bg-bg_gradient p-4 border-2
   }
+
+
 
 .custom-prev,
 .custom-next {

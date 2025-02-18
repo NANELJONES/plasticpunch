@@ -203,10 +203,19 @@ export const StateContext = ({ children }) => {
   useEffect(() => {
     fetchAwarenessMaterial()
     fetchTips()
-     fetchblog(); // Initial fetch
+     
      fetchEvent()
      
   }, []);
+
+  
+
+  useEffect(() => {
+
+     fetchblog(); // Initial fetch
+    
+     
+  }, [blog]);
 
 
 

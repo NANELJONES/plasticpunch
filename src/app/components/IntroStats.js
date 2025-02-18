@@ -4,7 +4,7 @@ import {ImageContainer,ImageContainer2} from './ImageContainer'
 import AnimateUp from './AnimateUp'
 const IntroStats = ()=>{
     return (
-        <div className='flex flex-col gap-6'>
+        <div className='flex flex-col bg_blur md:gap-[4em]'>
          <IntroStat1></IntroStat1>
          <IntroStats2></IntroStats2>
          <IntroStat3></IntroStat3>

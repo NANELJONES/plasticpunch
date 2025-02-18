@@ -12,12 +12,13 @@ import {BlogDerivative,HorizontalBlogDerivative} from './BlogDerivative'
 import { useEffect } from 'react';
 import { getBlogs } from '@/app/api/blog';
 import { GetSimilarPosts, getFeaturedPost} from '@/app/api/blog';
+import FeaturePosts from './FeaturePosts';
 const Blog = () => {
 
 
   const {blog,  fetchblog} = useStateContext()
   const [similarPosts, setSimilarPosts] = useState([])
-  const [featuredPosts, setFeaturedPosts] = useState([])
+  
 
 
 
@@ -62,36 +63,7 @@ const Blog = () => {
   [blog])
 
 
-  useEffect(() => {
 
-    if (featuredPosts.length>0)  return
-    const getFeatured = async () => {  
-      try {
-        const response = await getFeaturedPost();
-        console.log("This is the LASSSSSSSSST FEATURE:", response)
-        setFeaturedPosts(response)
-        
-      } catch (error) {
-        console.error("Error fetching featured posts:", error);
-        return;
-      }
-  
-  
-    }
-    
-
-    if (featuredPosts.length > 0) {
-      return
-    }else{
-      getFeatured()
-    }
-
-
-  }, 
-  
-  
-  
-  [blog])
 
 
 
@@ -151,7 +123,7 @@ transition={{duration:1}}
             </div>
     </div>
     
-    <div className='mt-[8em]'><HorizontalBlogDerivative title="Featured Posts" blog_data={featuredPosts}/></div>
+   <FeaturePosts></FeaturePosts>
     </>
   )
 }

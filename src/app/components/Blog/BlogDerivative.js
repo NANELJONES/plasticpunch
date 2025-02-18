@@ -20,8 +20,9 @@ const BlogDerivative = ({ title, blog_data }) => {
 
   return (
     <>
+  
       <h5 className="text-lg font-bold mb-4">{title}</h5>
-
+      {blog_data.length === 0 ? <p> {title} Content Upcoming Soon <br/>Stay Tuned</p> : ""}
       {/* Slider for small screens */}
       <div className="block md:hidden">
         <Slider {...sliderSettings}>

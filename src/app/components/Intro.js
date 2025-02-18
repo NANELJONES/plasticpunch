@@ -14,7 +14,7 @@ const Intro = () => {
     <div className='w-full '>
       
   
-    <div className='h-auto   lg:p-20 p-10 gap-10  justify-between lg:flex-row items-start max-w-[1500px] mx-auto flex-col   max-h-fit flex items-center  '>
+    <div className='h-auto   lg:p-20 bg_blur p-6 gap-10 lg:gap-0  justify-between lg:flex-row items-start max-w-[1500px] mx-auto flex-col   max-h-fit flex items-center  '>
         {/* Texts */}
    
             
@@ -23,7 +23,7 @@ const Intro = () => {
       initial={{ opacity: 0, y: 200 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2,  }}
-     className='w-full lg:w-1/2 self-start  z-[2]  lg:sticky lg:top-[50px] lg:mt-[10em] '>
+     className='w-full lg:w-1/2 self-start   z-[2]  lg:sticky lg:top-[50px] lg:mt-[10em] '>
              <motion.h5 className='text-white  ' 
               initial={{ opacity: 0, y: -30 }}
               whileInView={{ opacity: 1, y: 0 }}

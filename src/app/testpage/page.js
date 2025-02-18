@@ -4,22 +4,18 @@ import React from "react";
 import Layout1 from "../layout/Layout1";
 
 import { usePathname } from "next/navigation";
+import AbstractCube from "../components/3D/AbstractCube";
 import BlogSample from "../components/BlogSample";
 import { Blog } from "../components/Blog/Blog";
 import { getVolunteeringOptions } from "../api/queries";
 import { handle_toast_notification } from "../components/Toast";
 import { getAvailablePositions, getSingleJobPost, getAwarenessMaterials, getTips } from "../api/queries";
 import { getEvents } from "../api/queries";
+import FeaturePosts from "../components/Blog/FeaturePosts";
 import { useStateContext } from "../Context/StateContext";
-import { SampleEvents } from "../components/SampleEvents";
-import { SampleEvents2 } from "../components/SampleEvents";
-import { SampleEvents3 ,SampleEvents4} from "../components/SampleEvents";
-import OnlineContent from "../components/OnlineContent";
-import { getSingleEvent } from "../api/queries";
-import SampleProject from "../components/SampleProject";
-import IntroStats from "../components/IntroStats";
-import HomeContent from "../components/HomeContent";
 
+
+import Categories from "../components/Blog/Categories";
 const page = () => {
   // The URL and title you'd like to share
   const router  =  usePathname()
@@ -33,8 +29,8 @@ const page = () => {
   return (
     <div className="bg-primary_color">
       <Layout1>
-
-    <HomeContent></HomeContent>
+        <AbstractCube></AbstractCube>
+  
       
        </Layout1>
     </div>

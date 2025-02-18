@@ -23,13 +23,13 @@ const BlogContent = ({ blog }) => {
       <div className="bg-gradient-to-t from-[#1E2D7D] to-transparent h-[80%] absolute bottom-0 w-full"></div>
       <div  className="w-full p-[3em] z-[10] flex flex-col gap-4 md:w-2/3   absolute bottom-0 ">
       <p  className="text-white">{blog.node.contentType}</p>
-      <h3 className="lg:hidden  text-white ">
+      <h2 className="lg:hidden limited-text_header text-white ">
         {blog.node.title}
-      </h3>
-      <h1 className=" hidden lg:block text-white ">
+      </h2>
+      <h1 className=" hidden  lg:block text-white ">
         {blog.node.title}
       </h1>
-      <p className="text-white">{blog.node.excerpt}</p>
+      <p className="text-white limited-text_normal ">{blog.node.excerpt}</p>
       <Button3 link_address={`/blog/${blog.node.slug}`} title="Read More" > </Button3>
 
 
@@ -53,21 +53,21 @@ return (
   <div className="rounded-lg bg-gradient-to-t from-[#1E2D7D] to-transparent h-[80%] absolute bottom-0 w-full"></div>
   <div  className="w-full z-[10] p-[3em] flex flex-col gap-2 md:w-2/3   absolute bottom-0 ">
   <p  className="text-white">{event.node.eventType}</p>
-  <h4 className="  lg:hidden text-white ">
+  <h2 className=" limited-text_header lg:hidden text-white ">
     {event.node.eventName}
-  </h4>
+  </h2>
 
   <h1 className="hidden lg:block text-white ">
     {event.node.eventName}
   </h1>
-  <p className="text-white">{event.node.eventIntro}</p>
+  <p className="text-white limited-text_normal">{event.node.eventIntro}</p>
  
 
-  <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/location_icon.svg"/>  <h6 className="text-white"> { event.node.eventLocation}</h6></span>
+  <span className="flex gap-2  items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/location_icon.svg"/>  <p className="text-white"> { event.node.eventLocation}</p></span>
  
- <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/date_icon.svg"/> <h6 className="text-white"> { GetDate(event.node.eventDatesAndTime[0]) }</h6></span>
+ <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/date_icon.svg"/> <p className="text-white"> { GetDate(event.node.eventDatesAndTime[0]) }</p></span>
  
- <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/time_icon.svg"/> <h6 className="text-white"> { GetTime(event.node.eventDatesAndTime[0]) }</h6></span>
+ <span className="flex gap-2 items-center"> <img className="w-10 object-cover   bg-white p-2 rounded-md"  src= "/Regular Icons/time_icon.svg"/> <p className="text-white"> { GetTime(event.node.eventDatesAndTime[0]) }</p></span>
  
  
   <Button3 link_address={`/blog/${event.node.slug}`} title="Read More" > </Button3>

@@ -11,7 +11,7 @@ import CommentsForm from "@/app/components/Blog/CommentsForm";
 import Comments from "@/app/components/Blog/Comments";
 import { GetSingleBlogPost, GetSimilarPosts } from "@/app/api/blog";
 import { RichText } from "@graphcms/rich-text-react-renderer";
-
+import FeaturePosts from "@/app/components/Blog/FeaturePosts";
 const Page = () => {
   const pathname = usePathname();
   const slug = pathname.split("/").pop();
@@ -150,12 +150,7 @@ const Page = () => {
       </div>
 
       {/* Featured Posts */}
-      <div className="mt-[5em]">
-        <HorizontalBlogDerivative
-          title="Featured Posts"
-          blog_data={blog_info.data.postsConnection.edges}
-        />
-      </div>
+            <FeaturePosts></FeaturePosts>
     </Layout1>
   );
 };

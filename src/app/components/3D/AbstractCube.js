@@ -7,7 +7,7 @@ const AbstractCube = () => {
   return (
     <div className='w-full h-[100vh]     sticky top-20'>
 
-<main className='h-[80vh]'>
+<main className=' h-full'>
       <Spline
         scene="https://prod.spline.design/TCmFCdGyXUuRS90I/scene.splinecode" 
       />

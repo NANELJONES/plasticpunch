@@ -35,7 +35,7 @@ const Nav = () => {
 
    
     { nav_name: "About Us", nav_icon: "./menu.svg", nav_link: "/aboutUs" },
-     { nav_name: "Join Us", nav_icon: "./menu.svg", nav_link: "/join_us" },
+     { nav_name: "Join Us", nav_icon: "./menu.svg", nav_link: "/joinUs" },
     { nav_name: "Contact Us", nav_icon: "./menu.svg", nav_link: "/contactUs" },
   ];
 

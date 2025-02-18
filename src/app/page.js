@@ -41,15 +41,11 @@ export default function Home() {
             <Donate />
             <DailyContent />
             <ChangeMakers />
+            <Clients />
+            <Testimonials></Testimonials>
           </div>
         </div>
-        <br/>
-        <br/>
-        <Clients />
-        <br/>
-        <br/>
 
-        <Testimonials></Testimonials>
       </Layout1>
     </div>
   );
