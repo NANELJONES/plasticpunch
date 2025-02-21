@@ -11,23 +11,33 @@ const Society = () => {
 
   const csrData = [
     {
-      Csr_Name: "Sustainability and Environmental Responsibility",
-      Csr_Details: "We are committed to sustainable practices, focusing on reducing our carbon footprint, promoting recycling, and supporting environmental conservation initiatives. Our team actively engages in charity programs aimed at enhancing sustainability in our communities.",
+      Csr_Name: "SDG 14 – Life Below Water 🌊",
+      Csr_Details: "By reducing plastic pollution and protecting marine biodiversity, particularly endangered marine turtles, Plastic Punch directly contributes to conserving ocean ecosystems",
       Csr_Icon: "/csr icons/carbon_sustainability.svg",
     },
     {
-      Csr_Name: "Community Development and Social Impact",
-      Csr_Details: "Our dedication to community development involves collaborating with local organizations to enhance education, healthcare access, and poverty alleviation initiatives. We strive to create a positive social impact through active participation and investment in our communities.",
+      Csr_Name: "SDG 12 – Responsible Consumption and Production 🔄",
+      Csr_Details: "Promoting a circular economy and sustainable waste management practices aligns with this goal by encouraging responsible plastic use, recycling, and reducing waste.",
       Csr_Icon: "/csr icons/ri_user-community-line.svg",
     },
     {
-      Csr_Name: "Employee Welfare and Safety",
-      Csr_Details: "We prioritize the well-being and safety of our employees by fostering a supportive work environment. Our initiatives focus on mental health resources, safe working conditions, and programs that promote work-life balance, ensuring our team members thrive both personally and professionally.",
+      Csr_Name: "SDG 13 – Climate Action 🌍",
+      Csr_Details: "Waste, especially plastic, contributes to greenhouse gas emissions when burned or improperly disposed of. By promoting waste reduction and sustainable practices, the NGO contributes to climate mitigation efforts.",
       Csr_Icon: "/csr icons/clarity_employee-line.svg",
     },
     {
-      Csr_Name: "Ethical Business Practices and Governance",
-      Csr_Details: "Our commitment to ethical business practices is reflected in our transparent governance structure. We adhere to high standards of integrity, ensuring fair treatment for all stakeholders, and actively engage in responsible decision-making that supports ethical behavior in our operations.",
+      Csr_Name: "SDG 11 – Sustainable Cities and Communities 🏙️",
+      Csr_Details: "Engaging communities in environmental education and beach cleanups fosters cleaner and more sustainable urban and coastal environments.",
+      Csr_Icon: "/csr icons/ri_government-fill.svg",
+    },
+    {
+      Csr_Name: "Life on Land 🌱",
+      Csr_Details: "While focused on marine conservation, reducing plastic waste also benefits terrestrial wildlife and ecosystems by preventing land-based pollution from reaching water bodies.",
+      Csr_Icon: "/csr icons/ri_government-fill.svg",
+    },
+    {
+      Csr_Name: "SDG 17 – Partnerships for the Goals 🤝",
+      Csr_Details: "Collaborations with local and international organizations, volunteers, and governments help drive impact and scale environmental efforts.",
       Csr_Icon: "/csr icons/ri_government-fill.svg",
     },
   ];
@@ -44,7 +54,8 @@ const Society = () => {
     
 
       <p className ="md:w-2/3 text-white">
-      We are committed to sustainable practices, focusing on reducing our carbon footprint, promoting recycling, and supporting environmental conservation initiatives.
+      Plastic Punch's operations align with several United Nations Sustainable Development Goals (SDGs), including:
+
         <br />
 
       
@@ -52,7 +63,7 @@ const Society = () => {
 
       <div className="flex flex-wrap items-center  justify-around gap-10 transition">
         {csrData.map((csr, index) => (
-          <div key={index} className={`transition-all duration-500  bg-primary_color ${showMore === csr.Csr_Name ? ' w-full  md:w-[70%]  py-[3em] max-w-[500px] ' : 'max-w-[250px]'}`}>
+          <div key={index} className={`transition-all duration-500 w-full  bg-primary_color ${showMore === csr.Csr_Name ? ' w-full  md:w-[70%]  py-[3em] max-w-[500px] ' : 'max-w-[300px] min-w-[280px]'}`}>
             <AnimateUp> 
               <div 
                 className=" p-4 h-[20em] flex shadow-xl flex-col justify-end relative"
@@ -62,8 +73,8 @@ const Society = () => {
                   src={csr.Csr_Icon}
                   alt={csr.Csr_Name}
                 />
-                <div className="h-auto self-end">
-                  <h5 className={` text-[1em] text-white font-medium leading-[1.4] md:text-[1.3em] md:w-full md:leading-[1.5] 2xl:text-[20px] 2xl:leading-[1.6] ${showMore === csr.Csr_Name ? 'md:w-1/2' :""}`}>
+                <div className="h-auto w-full self-end">
+                  <h5 className={` text-[1em] text-white text-left font-medium leading-[1.4] md:text-[1.3em] md:w-full md:leading-[1.5] 2xl:text-[20px] 2xl:leading-[1.6] ${showMore === csr.Csr_Name ? 'md:w-1/2' :""}`}>
                     {csr.Csr_Name}
                   </h5>
                   <br/>

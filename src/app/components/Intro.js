@@ -4,7 +4,15 @@ import { motion } from "framer-motion";
 import Link from 'next/link';
 import Layout1 from '../layout/Layout1';
 import { AllLines } from './AllLines';
-import {Swiper, SwiperSlide} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/pagination';
+import { Autoplay, Pagination } from 'swiper/modules';
+
+
+
+
 import SimpleData from './Data Stats/SimpleData';
 
 
@@ -86,10 +94,10 @@ const Intro = () => {
     >
       <img src="/Us/1.jpg" className="w-full rounded-xl h-auto object-cover md:max-h-[300px]" />
       <img src="/Us/2.jpg" className="w-full rounded-xl  h-auto object-cover md:max-h-[300px]" />
-      <img src="/Us/3.jpeg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
-      <img src="/Us/4.jpeg" className="w-full rounded-xl  h-auto object-cover mmd:max-h-[300px]" />
-      <img src="/Us/4.jpeg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
-      <img src="/Us/4.jpeg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
+      <img src="/Us/3.jpg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
+      <img src="/Us/4.jpg" className="w-full rounded-xl  h-auto object-cover mmd:max-h-[300px]" />
+      <img src="/Us/5.jpg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
+      <img src="/Us/6.jpg" className="w-full rounded-xl  h-auto object-cover  md:max-h-[300px]" />
     </motion.div>
   </div>
 </div>
@@ -98,29 +106,28 @@ const Intro = () => {
 
         
         {/* Display on small devices */}
-        <div className='w-full flex lg:hidden lg:w-1/2   hide_scroll '>
+        <div className='w-full flex lg:hidden lg:w-1/2 hide_scroll'>
+      <div className='w-full'>
+        <Swiper
+          spaceBetween={2}
+          slidesPerView={'auto'}
+          autoplay={{ delay: 2000, disableOnInteraction: false }}
+          loop={true}
+          centeredSlides={true}
 
-                <div className='w-full  '>
-
-                        <motion.div 
-                        initial={{x:"0"}}
-                        whileInView={{x:"-10%"}}
-                        transition={{duration:2}}
-
-                       
-             
-                        className='w-full  flex flex-row lg:flex-col  overflow-x-hidden p-2  gap-2  '>
-                            <img src="/Us/1.jpg" className='h-full max-w-[250px] max-h-[200px] lg:max-w-full lg:max-h-full '/>
-                            <img src="/Us/2.jpg" className='h-full max-w-[230px] max-h-[200px] lg:max-w-full lg:max-h-full'/>
-                            <img src="/Us/3.jpeg" className='h-full max-w-[240px] max-h-[200px] lg:max-w-full lg:max-h-full'/>
-                            <img src="/Us/4.jpeg" className='h-full max-w-[250px] max-h-[200px] lg:max-w-full lg:max-h-full'/>
-                            <img src="/Us/4.jpeg" className='h-full max-w-[250px] max-h-[200px] lg:max-w-full lg:max-h-full'/>
-                            <img src="/Us/4.jpeg" className='h-full max-w-[250px] max-h-[200px] lg:max-w-full lg:max-h-full'/>
-                            
-                        </motion.div>
-                </div>
-        </div>
-
+          pagination={{ clickable: true }}
+          modules={[Autoplay, Pagination]}
+          className='w-full mySwiper flex flex-row lg:flex-col overflow-hidden p-2 gap-2'
+        >
+          <SwiperSlide><img src="/Us/1.jpg" className=' object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+           <SwiperSlide><img src="/Us/2.jpg" className=' object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+           <SwiperSlide><img src="/Us/3.jpg" className='object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+           <SwiperSlide><img src="/Us/4.jpg" className='object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+           <SwiperSlide><img src="/Us/5.jpg" className='object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+           <SwiperSlide><img src="/Us/6.jpg" className='object-cover h-full mx-auto w-full max-h-[300px] lg:max-w-full lg:max-h-full' /></SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
         
 
 

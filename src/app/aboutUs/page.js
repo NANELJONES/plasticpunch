@@ -98,11 +98,11 @@ const Page = () => {
           <br/>
             
             <AnimateUp>
-            <div className='w-full h-[15em] relative lg:h-[30em] max-h-[400px] bg-blue-600 rounded-2xl'>
+            <div className='w-full  h-[15em] relative lg:h-[30em] max-h-[400px] bg-blue-600 rounded-2xl'>
             <Image
               alt={`/gallery`}
-              src={`/new_contact_bg.jpg`}
-              className="w-full object-cover rounded-2xl"
+              src={`/Us/7.jpg`}
+              className="w-full filter grayscale-0 object-cover rounded-2xl"
               fill
             />
 
@@ -117,8 +117,24 @@ const Page = () => {
         </div>
 
 
-       <AnimateUp> <h3 className='hidden md:block bg-primary_color text-white p-10' >Get in touch with our latest blogs, from all around the world regarding our various inputs and projects.</h3></AnimateUp>
-       <AnimateUp> <h4 className='md:hidden block bg-primary_color text-white p-10' >Get in touch with our latest blogs, from all around the world regarding our various inputs and projects.</h4></AnimateUp>
+       <AnimateUp> <h3 className='hidden md:block bg-primary_color text-white p-10' >Plastic Punch, founded in 2018 by seven young advocates, promotes circular economy and marine conservation through citizen science and awareness, tackling plastic pollution for sustainable development.
+
+
+
+
+
+
+
+</h3></AnimateUp>
+       <AnimateUp> <h4 className='md:hidden block bg-primary_color text-white p-10' >Plastic Punch, founded in 2018 by seven young advocates, promotes circular economy and marine conservation through citizen science and awareness, tackling plastic pollution for sustainable development.
+
+
+
+
+
+
+
+</h4></AnimateUp>
 
 
      {/* who we are*/}
@@ -129,7 +145,7 @@ const Page = () => {
 
             <Image
               alt={`/gallery`}
-              src={`/our_culture.jpeg`}
+              src={`/Us/1.jpg`}
               className="w-full object-cover grayscale rounded-2xl"
               fill
             />
@@ -190,7 +206,7 @@ const Page = () => {
 
         <Image
           alt={`/gallery`}
-          src={`/our_culture.jpeg`}
+          src={`/Us/Legacy.jpg`}
           className="w-full object-cover grayscale  "
           fill
         />
@@ -199,9 +215,9 @@ const Page = () => {
         <div className='bg-primary_color md:ml-[3em] drop-shadow-lg    md:mt-[-10em] z-[20]    p-12 md:w-1/2'>
         <h4 className='text-white'>Legacy Nii Quanio</h4>
         <br/>
-        <p className='text-white'>{`LLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lor `}</p>
+        <p className='text-white'>{`""Welcome to Plastic Punch! Our journey started in 2018 with a shared passion for protecting marine life and the environment, particularly the endangered sea turtles that come to Ghana’s shores to nest. Seeing these incredible creatures struggle to survive amidst plastic pollution made us realize the urgent need for action. 
+
+At Plastic Punch, we believe that change begins with awareness and community-driven solutions. Our beach cleanups do more than just remove waste; they serve as a platform for education, engagement, and inspiring behavioral shifts towards sustainable waste management. Through 'edutainment'—a fun and interactive approach to learning—we empower communities to take ownership of their environment, ensuring a cleaner, safer future for both people and wildlife."`}</p>
 
         </div>
 

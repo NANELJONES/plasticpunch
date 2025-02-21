@@ -41,14 +41,14 @@ const Page = () => {
             </p>
           </div>
 
-          <div className="relative flex w-full md:w-1/2">
+          {/* <div className="relative flex w-full md:w-1/2">
             <Image
               alt="this is here"
-              src={"/our_project.png"}
+              src={"/Us/1.jpg"}
               className="w-full object-contain"
               fill
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
