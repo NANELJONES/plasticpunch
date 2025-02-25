@@ -2,7 +2,7 @@
 import React from "react";
 
 import Layout1 from "../layout/Layout1";
-
+import { SampleEvents4 } from "../components/SampleEvents";
 import { usePathname } from "next/navigation";
 import AbstractCube from "../components/3D/AbstractCube";
 import BlogSample from "../components/BlogSample";
@@ -29,8 +29,7 @@ const page = () => {
   return (
     <div className="bg-primary_color">
       <Layout1>
-        <AbstractCube></AbstractCube>
-  
+    <SampleEvents4></SampleEvents4>
       
        </Layout1>
     </div>

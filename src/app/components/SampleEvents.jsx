@@ -11,6 +11,7 @@ import AnimateUp from './AnimateUp';
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import { useStateContext } from '../Context/StateContext';
 
 const SampleEvents = () => {
   const latest_event = events.data.eventsConnection.edges[0].node;
@@ -144,7 +145,9 @@ const SampleEvents3 = () => {
 
 
 const SampleEvents4 = () => {
-  const latest_event = events.data.eventsConnection.edges[0].node;
+
+  const {events} = useStateContext()
+ 
 
   return (
     <div className="h-auto relative">
@@ -164,7 +167,7 @@ const SampleEvents4 = () => {
       pagination={{ clickable: true }}
       className="mySwiper"
       >
-        {events.data.eventsConnection.edges.slice(1, 5).map((each_event, index) => (
+        {events.data.slice(0, 4).map((each_event, index) => (
           <SwiperSlide key={index} className='p-0'>
               <AnimateUp>  <div className={`transition-transform duration-300   ${index % 2 !== 0 ? " scale-[0.8] hover:scale-[1]" : "scale-[0.9]"}`}>
       <EventCard event_data={each_event.node} />

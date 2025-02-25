@@ -204,7 +204,7 @@ export const StateContext = ({ children }) => {
     fetchAwarenessMaterial()
     fetchTips()
      
-    //  fetchEvent()
+      fetchEvent()
      
   }, []);
 
